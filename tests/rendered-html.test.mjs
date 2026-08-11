@@ -71,5 +71,6 @@ test("includes accessible section structure and image text", async () => {
   assert.match(css, /@media \(max-width: 760px\)[\s\S]*\.title-line\s*\{\s*white-space:\s*normal;/);
   assert.match(css, /width:\s*min\(100%,\s*408px\)/);
   assert.match(css, /\.about-copy\s*\{\s*padding:\s*clamp\(28px,\s*5vw,\s*56px\)/);
+  assert.doesNotMatch(css, /\.announcement-section\s*\+\s*\.announcement-section[^}]*border/);
   assert.doesNotMatch(css, /gradient\(/);
 });

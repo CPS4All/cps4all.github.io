@@ -168,7 +168,6 @@ tbody tr:last-child td { border-bottom: 0; }
 td strong { color: var(--text); }
 
 .announcement-section { padding-block: clamp(26px, 4vw, 42px); }
-.announcement-section + .announcement-section { border-top: 1px solid var(--line); }
 .announcement-section h2 { margin-bottom: 8px; }
 .announcement-section p { margin: 0; }
 
