@@ -65,7 +65,7 @@ export default function Home() {
               alt="Smart environments, wearables, extended reality, and robotics connected through transferable insights."
             />
             <p>
-              However, realizing this potential requires addressing key challenges in context sensing, user modeling, adaptive interaction, privacy, and evaluation to ensure CPS are reliable and effective in real-world settings.
+              <strong>Challenge:</strong> However, realizing this potential requires addressing key challenges in context sensing, user modeling, adaptive interaction, privacy, and evaluation to ensure CPS are reliable and effective in real-world settings.
             </p>
             <p>
               <strong>Goal:</strong> This workshop will bring together researchers and practitioners across HCI, AI, wearables, robotics, XR, smart environments, accessibility, and ability augmentation to examine shared strategies and challenges for designing accessibility- and ability-centered CPS.
