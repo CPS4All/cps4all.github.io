@@ -20,8 +20,8 @@ test("server-renders the complete workshop page", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /class="title-line">Cyber-Physical Systems for<\/span>/);
-  assert.match(html, /class="title-line title-accent">Accessibility and Ability Augmentation<\/span>/);
+  assert.match(html, /class="title-line">Cyber-Physical Systems<\/span>/);
+  assert.match(html, /class="title-line title-accent">for Accessibility and Ability Augmentation<\/span>/);
   assert.match(html, /November 2, 2026/);
   assert.match(html, /Location: <strong>Renaissance Center<\/strong>/);
   assert.doesNotMatch(html, /Detroit Marriott/);
