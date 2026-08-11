@@ -7,7 +7,7 @@ const schedule = [
   ["11:00 - 12:00", "Panel Discussion"],
   ["13:45 - 14:30", "Keynote 2"],
   ["14:30 - 15:30", "Demo & Poster Session"],
-  ["15:30 - 16:15", "Mixed-Group Design & Discussion"],
+  ["15:30 - 16:15", "Mixed-Group Discussion"],
   ["16:15-17:00", "Closing"],
 ];
 
@@ -53,13 +53,6 @@ export default function Home() {
         <section aria-labelledby="about-title">
           <h2 id="about-title">About the Workshop</h2>
           <div className="content-card about-copy">
-            <Image
-              className="workshop-figure"
-              src="/figure1.png"
-              width="3140"
-              height="3023"
-              alt="Smart environments, wearables, extended reality, and robotics connected through transferable insights."
-            />
             <p>
               <strong>Motivation:</strong> The convergence of wearables, robotics, extended reality, and smart environments is expanding the design space for cyber-physical systems (CPS) that support and augment human abilities in daily life. By sensing real-world contexts, modeling user needs, and providing situated assistance, these systems can improve accessibility for people with disabilities while enhancing abilities such as perception, memory, learning, and mobility.
             </p>
@@ -72,6 +65,13 @@ export default function Home() {
             <p>
               <strong>Activities and Outcome:</strong> Through panel discussions, interactive demos, and mixed-group design activities, participants will identify design principles, technical challenges, and future directions for CPS that support and augment human abilities in real-world settings.
             </p>
+            <Image
+              className="workshop-figure"
+              src="/figure1.png"
+              width="3140"
+              height="3023"
+              alt="Smart environments, wearables, extended reality, and robotics connected through transferable insights."
+            />
           </div>
         </section>
 

@@ -25,13 +25,14 @@ test("server-renders the complete workshop page", async () => {
   assert.match(html, /November 2, 2026/);
   assert.match(html, /Detroit Marriott at the Renaissance Center/);
   assert.match(html, /Register \(Google Form\)/);
-  assert.match(html, /Mixed-Group Design &amp; Discussion/);
+  assert.match(html, /Mixed-Group Discussion/);
+  assert.doesNotMatch(html, /Mixed-Group Design &amp; Discussion/);
   assert.match(html, /Pattie Maes/);
   assert.match(html, /xsc14thu@gmail\.com/);
   assert.match(html, /\/figure1\.png/);
   assert.ok(
-    html.indexOf("alt=\"Smart environments") < html.indexOf("The convergence of wearables"),
-    "workshop figure should appear before the about copy",
+    html.indexOf("alt=\"Smart environments") > html.indexOf("Activities and Outcome:"),
+    "workshop figure should appear after the final about paragraph",
   );
   assert.match(html, /\/organizers\/riku\.jpg/);
   assert.match(html, /\/organizers\/shuchang\.png/);
@@ -59,5 +60,6 @@ test("includes accessible section structure and image text", async () => {
   assert.match(css, /prefers-reduced-motion/);
   assert.match(css, /--accent:\s*#0a8c9c/);
   assert.match(css, /\.title-line\s*\{[^}]*white-space:\s*nowrap/s);
+  assert.match(css, /width:\s*min\(100%,\s*408px\)/);
   assert.doesNotMatch(css, /gradient\(/);
 });
