@@ -99,19 +99,19 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="announcement-grid" aria-label="Workshop participants and presentations">
-          <article className="content-card">
-            <h2>Keynote Speakers</h2>
-            <p>To be Announced</p>
-          </article>
-          <article className="content-card">
-            <h2>Panelists</h2>
-            <p>To be Announced</p>
-          </article>
-          <article className="content-card">
-            <h2>Demo & Poster Presentations</h2>
-            <p>To be Announced</p>
-          </article>
+        <section className="announcement-section" aria-labelledby="keynote-speakers-title">
+          <h2 id="keynote-speakers-title">Keynote Speakers</h2>
+          <p>To be Announced</p>
+        </section>
+
+        <section className="announcement-section" aria-labelledby="panelists-title">
+          <h2 id="panelists-title">Panelists</h2>
+          <p>To be Announced</p>
+        </section>
+
+        <section className="announcement-section" aria-labelledby="presentations-title">
+          <h2 id="presentations-title">Demo & Poster Presentations</h2>
+          <p>To be Announced</p>
         </section>
 
         <section aria-labelledby="organizers-title">

@@ -44,6 +44,11 @@ test("server-renders the complete workshop page", async () => {
   assert.match(html, /<strong>Challenge:<\/strong>/);
   assert.match(html, /<strong>Goal:<\/strong>/);
   assert.match(html, /<strong>Activities and Outcome:<\/strong>/);
+  assert.match(html, /class="announcement-section" aria-labelledby="keynote-speakers-title"/);
+  assert.match(html, /id="keynote-speakers-title">Keynote Speakers<\/h2><p>To be Announced<\/p>/);
+  assert.match(html, /id="panelists-title">Panelists<\/h2><p>To be Announced<\/p>/);
+  assert.match(html, /id="presentations-title">Demo &amp; Poster Presentations<\/h2><p>To be Announced<\/p>/);
+  assert.doesNotMatch(html, /class="announcement-grid"|<article class="content-card">/);
   assert.doesNotMatch(html, /Speaker to be announced/);
   assert.doesNotMatch(html, /Contact Us<\/a> \(xsc14thu@gmail\.com\)/);
   assert.match(html, /https:\/\/cps4all\.github\.io\/og\.png/);
@@ -65,5 +70,6 @@ test("includes accessible section structure and image text", async () => {
   assert.match(css, /h1\s*\{[^}]*font-weight:\s*800/s);
   assert.match(css, /@media \(max-width: 760px\)[\s\S]*\.title-line\s*\{\s*white-space:\s*normal;/);
   assert.match(css, /width:\s*min\(100%,\s*408px\)/);
+  assert.match(css, /\.about-copy\s*\{\s*padding:\s*clamp\(28px,\s*5vw,\s*56px\)/);
   assert.doesNotMatch(css, /gradient\(/);
 });
