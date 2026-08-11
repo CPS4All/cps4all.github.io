@@ -12,7 +12,7 @@ const schedule = [
 ];
 
 const organizers = [
-  { name: "Shuchang Xu*", affiliation: "HKUST", image: "/organizers/shuchang.png" },
+  { name: "Shuchang Xu*", affiliation: "HKUST, MIT Media Lab", image: "/organizers/shuchang.png" },
   { name: "Riku Arakawa*", affiliation: "Carnegie Mellon University", image: "/organizers/riku.jpg" },
   { name: "Mina Huh*", affiliation: "University of California, Berkeley", image: "/organizers/mina.png" },
   { name: "Nandi Zhang*", affiliation: "University of Rochester", image: "/organizers/nandi.jpeg" },
@@ -35,7 +35,8 @@ export default function Home() {
         <div className="wrap">
           <p className="badge">UIST 2026 Workshop | Detroit, MI USA</p>
           <h1>
-            Cyber-Physical Systems for <span>Accessibility</span> and <span>Ability Augmentation</span>
+            <span className="title-line">Cyber-Physical Systems for</span>
+            <span className="title-line title-accent">Accessibility and Ability Augmentation</span>
           </h1>
           <p className="date">November 2, 2026</p>
           <p className="location">Location: <strong>Detroit Marriott at the Renaissance Center</strong></p>
@@ -60,7 +61,16 @@ export default function Home() {
               alt="Smart environments, wearables, extended reality, and robotics connected through transferable insights."
             />
             <p>
-              The powerful convergence of wearables, robotics, extended reality, and smart environments is expanding the design space for cyber-physical systems (CPS) that support and augment human abilities in daily life. By sensing real-world contexts, modeling user needs, and providing situated assistance, these systems can improve accessibility for people with disabilities while enhancing broader human abilities such as perception, memory, learning, and mobility. However, realizing this potential requires addressing key challenges in context sensing, user modeling, adaptive interaction, privacy, and evaluation to ensure that CPS are reliable and effective in real-world contexts. This workshop will bring together researchers and practitioners across HCI, AI, wearables, robotics, XR, smart environments, accessibility, and ability augmentation to examine shared strategies and challenges for designing accessibility- and ability-centered CPS. Through panel discussions, interactive demos, and mixed-group design activities, participants will identify recurring design principles, technical challenges, and future directions for CPS that support and augment human abilities in real-world settings.
+              <strong>Motivation:</strong> The convergence of wearables, robotics, extended reality, and smart environments is expanding the design space for cyber-physical systems (CPS) that support and augment human abilities in daily life. By sensing real-world contexts, modeling user needs, and providing situated assistance, these systems can improve accessibility for people with disabilities while enhancing abilities such as perception, memory, learning, and mobility.
+            </p>
+            <p>
+              <strong>Challenge:</strong> Realizing this potential requires addressing key challenges in context sensing, user modeling, adaptive interaction, privacy, and evaluation to ensure CPS are reliable and effective in real-world settings.
+            </p>
+            <p>
+              <strong>Goal:</strong> This workshop will bring together researchers and practitioners across HCI, AI, wearables, robotics, XR, smart environments, accessibility, and ability augmentation to examine shared strategies and challenges for designing accessibility- and ability-centered CPS.
+            </p>
+            <p>
+              <strong>Activities and Outcome:</strong> Through panel discussions, interactive demos, and mixed-group design activities, participants will identify design principles, technical challenges, and future directions for CPS that support and augment human abilities in real-world settings.
             </p>
           </div>
         </section>
@@ -106,6 +116,7 @@ export default function Home() {
 
         <section aria-labelledby="organizers-title">
           <h2 id="organizers-title">Organizers</h2>
+          <p className="organizer-note">* equal contributions</p>
           <div className="people">
             {organizers.map((organizer) => (
               <article className={`person${organizer.image ? " has-image" : ""}`} key={organizer.name}>
@@ -119,7 +130,6 @@ export default function Home() {
               </article>
             ))}
           </div>
-          <p className="organizer-note">* equal contributions</p>
         </section>
 
         <section aria-labelledby="questions-title">
