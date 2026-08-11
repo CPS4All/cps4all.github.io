@@ -32,8 +32,9 @@ test("server-renders the complete workshop page", async () => {
   assert.match(html, /xsc14thu@gmail\.com/);
   assert.match(html, /\/figure1\.png/);
   assert.ok(
-    html.indexOf("alt=\"Smart environments") > html.indexOf("Activities and Outcome:"),
-    "workshop figure should appear after the final about paragraph",
+    html.indexOf("alt=\"Smart environments") > html.indexOf("Motivation:") &&
+      html.indexOf("alt=\"Smart environments") < html.indexOf("Challenge:"),
+    "workshop figure should appear between Motivation and Challenge",
   );
   assert.match(html, /\/organizers\/riku\.jpg/);
   assert.match(html, /\/organizers\/shuchang\.png/);
@@ -70,7 +71,8 @@ test("includes accessible section structure and image text", async () => {
   assert.match(css, /h1\s*\{[^}]*font-weight:\s*800/s);
   assert.match(css, /@media \(max-width: 760px\)[\s\S]*\.title-line\s*\{\s*white-space:\s*normal;/);
   assert.match(css, /width:\s*min\(100%,\s*408px\)/);
-  assert.match(css, /\.about-copy\s*\{\s*padding:\s*clamp\(28px,\s*5vw,\s*56px\)/);
+  assert.match(css, /\.about-copy\s*\{[^}]*padding:\s*clamp\(36px,\s*6vw,\s*72px\)/s);
+  assert.match(css, /\.about-copy\s*\{[^}]*border:\s*2px solid #b6dfe3/s);
   assert.doesNotMatch(css, /\.announcement-section\s*\+\s*\.announcement-section[^}]*border/);
   assert.doesNotMatch(css, /gradient\(/);
 });

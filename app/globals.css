@@ -128,7 +128,10 @@ section > h2 {
 
 .content-card p { margin: 0; }
 
-.about-copy { padding: clamp(28px, 5vw, 56px); }
+.about-copy {
+  padding: clamp(36px, 6vw, 72px);
+  border: 2px solid #b6dfe3;
+}
 
 .about-copy p {
   color: #344f64;
@@ -142,7 +145,7 @@ section > h2 {
 .workshop-figure {
   width: min(100%, 408px);
   height: auto;
-  margin: clamp(28px, 4vw, 40px) auto clamp(8px, 1.5vw, 16px);
+  margin: clamp(30px, 4vw, 42px) auto;
   border: 0;
   border-radius: 14px;
 }
