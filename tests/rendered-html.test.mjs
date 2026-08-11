@@ -58,5 +58,6 @@ test("includes accessible section structure and image text", async () => {
   assert.match(html, /alt="Smart environments, wearables, extended reality, and robotics connected through transferable insights\."/);
   assert.match(css, /prefers-reduced-motion/);
   assert.match(css, /--accent:\s*#0a8c9c/);
+  assert.match(css, /\.title-line\s*\{[^}]*white-space:\s*nowrap/s);
   assert.doesNotMatch(css, /gradient\(/);
 });

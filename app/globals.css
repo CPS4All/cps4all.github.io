@@ -57,15 +57,17 @@ img { display: block; max-width: 100%; }
 h1, h2, h3 { color: var(--text); }
 
 h1 {
-  max-width: 920px;
+  max-width: 1100px;
   margin: 20px auto 14px;
-  font-size: clamp(34px, 6vw, 58px);
+  font-size: clamp(16px, 5.2vw, 58px);
   line-height: 1.08;
-  letter-spacing: -0.04em;
-  text-wrap: balance;
+  letter-spacing: -0.055em;
 }
 
-.title-line { display: block; }
+.title-line {
+  display: block;
+  white-space: nowrap;
+}
 .title-accent { color: var(--accent); }
 
 .date {
@@ -225,7 +227,6 @@ footer p { margin: 0; font-size: 14px; }
 
 @media (max-width: 520px) {
   .hero { padding-top: 48px; }
-  h1 { font-size: 36px; }
   .table-wrap { padding: 8px; }
   table { min-width: 0; }
   th, td { padding: 12px 9px; }
