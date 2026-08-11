@@ -39,6 +39,7 @@ test("server-renders the complete workshop page", async () => {
   assert.match(html, /\/organizers\/riku\.jpg/);
   assert.match(html, /\/organizers\/shuchang\.png/);
   assert.match(html, /\/organizers\/pattie\.png/);
+  assert.doesNotMatch(html, /\/_next\/image\?/);
   assert.match(html, /\* equal contributions/);
   assert.match(html, /HKUST, MIT Media Lab/);
   assert.match(html, /<strong>Motivation:<\/strong>/);

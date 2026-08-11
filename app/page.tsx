@@ -61,6 +61,7 @@ export default function Home() {
               src="/figure1.png"
               width="3140"
               height="3023"
+              unoptimized
               alt="Smart environments, wearables, extended reality, and robotics connected through transferable insights."
             />
             <p>
@@ -121,7 +122,7 @@ export default function Home() {
             {organizers.map((organizer) => (
               <article className={`person${organizer.image ? " has-image" : ""}`} key={organizer.name}>
                 {organizer.image && (
-                  <Image src={organizer.image} alt="" width="320" height="320" />
+                  <Image src={organizer.image} alt="" width="320" height="320" unoptimized />
                 )}
                 <div>
                   <h3>{organizer.name}</h3>
