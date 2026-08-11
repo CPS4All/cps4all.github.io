@@ -23,7 +23,8 @@ test("server-renders the complete workshop page", async () => {
   assert.match(html, /class="title-line">Cyber-Physical Systems for<\/span>/);
   assert.match(html, /class="title-line title-accent">Accessibility and Ability Augmentation<\/span>/);
   assert.match(html, /November 2, 2026/);
-  assert.match(html, /Detroit Marriott at the Renaissance Center/);
+  assert.match(html, /Location: <strong>Renaissance Center<\/strong>/);
+  assert.doesNotMatch(html, /Detroit Marriott/);
   assert.match(html, /Register \(Google Form\)/);
   assert.match(html, /Mixed-Group Discussion/);
   assert.doesNotMatch(html, /Mixed-Group Design &amp; Discussion/);
@@ -60,7 +61,8 @@ test("includes accessible section structure and image text", async () => {
   assert.match(css, /prefers-reduced-motion/);
   assert.match(css, /--accent:\s*#0a8c9c/);
   assert.match(css, /\.title-line\s*\{[^}]*white-space:\s*nowrap/s);
-  assert.match(css, /font-size:\s*clamp\(30px,\s*5\.2vw,\s*58px\)/);
+  assert.match(css, /font-size:\s*clamp\(36px,\s*5\.2vw,\s*58px\)/);
+  assert.match(css, /h1\s*\{[^}]*font-weight:\s*800/s);
   assert.match(css, /@media \(max-width: 760px\)[\s\S]*\.title-line\s*\{\s*white-space:\s*normal;/);
   assert.match(css, /width:\s*min\(100%,\s*408px\)/);
   assert.doesNotMatch(css, /gradient\(/);

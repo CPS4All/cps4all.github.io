@@ -39,7 +39,7 @@ export default function Home() {
             <span className="title-line title-accent">Accessibility and Ability Augmentation</span>
           </h1>
           <p className="date">November 2, 2026</p>
-          <p className="location">Location: <strong>Detroit Marriott at the Renaissance Center</strong></p>
+          <p className="location">Location: <strong>Renaissance Center</strong></p>
           <div className="cta-row">
             <span className="btn" aria-disabled="true">Register (Google Form)</span>
             <a className="btn" href="https://uist.acm.org/2026/workshops/" target="_blank" rel="noreferrer">
