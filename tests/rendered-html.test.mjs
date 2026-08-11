@@ -20,7 +20,8 @@ test("server-renders the complete workshop page", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /Cyber-Physical Systems for Accessibility and Ability Augmentation/);
+  assert.match(html, /Cyber-Physical Systems for/);
+  assert.match(html, />Accessibility<\/span> and <span>Ability Augmentation<\/span>/);
   assert.match(html, /November 2, 2026/);
   assert.match(html, /Detroit Marriott at the Renaissance Center/);
   assert.match(html, /Register \(Google Form\)/);
@@ -28,7 +29,16 @@ test("server-renders the complete workshop page", async () => {
   assert.match(html, /Pattie Maes/);
   assert.match(html, /xsc14thu@gmail\.com/);
   assert.match(html, /\/figure1\.png/);
+  assert.ok(
+    html.indexOf("alt=\"Smart environments") < html.indexOf("The powerful convergence"),
+    "workshop figure should appear before the about copy",
+  );
   assert.match(html, /\/organizers\/riku\.jpg/);
+  assert.match(html, /\/organizers\/shuchang\.png/);
+  assert.match(html, /\/organizers\/pattie\.png/);
+  assert.match(html, /\* equal contributions/);
+  assert.doesNotMatch(html, /Speaker to be announced/);
+  assert.doesNotMatch(html, /Contact Us<\/a> \(xsc14thu@gmail\.com\)/);
   assert.match(html, /https:\/\/cps4all\.github\.io\/og\.png/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/);
 });
