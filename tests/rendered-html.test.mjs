@@ -50,9 +50,16 @@ test("renders the masthead, hero, and event details", async () => {
   // Hero calls to action, in order.
   assert.ok(
     page.indexOf("forms.gle/sQSKbdvGa99BGCcB6") <
-      page.indexOf("/CPS4All_Proposal.pdf", page.indexOf("hero-inner")) &&
-      page.indexOf("hero-inner") < page.indexOf('id="about"'),
+      page.indexOf("/CPS4All_Proposal.pdf", page.indexOf("hero-foot")) &&
+      page.indexOf("hero-foot") < page.indexOf('id="about"'),
     "hero should lead with the registration form",
+  );
+
+  // Title, then the work strip, then the calls to action.
+  assert.ok(
+    page.indexOf("<h1>") < page.indexOf("hero-marquee") &&
+      page.indexOf("hero-marquee") < page.indexOf('class="actions"'),
+    "the work strip sits between the hero title and its buttons",
   );
   assert.doesNotMatch(page, /stat-strip|stat-grid/, "the at-a-glance stat strip is gone");
   assert.match(page, /href="https:\/\/uist\.acm\.org\/2026\/workshops\/"/);
@@ -66,7 +73,6 @@ test("renders every content section in order", async () => {
     'id="about"',
     'id="program"',
     'id="topics"',
-    'id="work"',
     'id="outcomes"',
     'id="organizers"',
     'id="participate"',
@@ -81,7 +87,7 @@ test("renders every content section in order", async () => {
     cursor = at;
   }
 
-  for (const id of ["about", "program", "topics", "work", "outcomes", "organizers", "participate", "history"]) {
+  for (const id of ["about", "program", "topics", "outcomes", "organizers", "participate", "history"]) {
     assert.match(page, new RegExp(`aria-labelledby="${id}-title"`), `${id} section needs a labelled heading`);
     assert.match(page, new RegExp(`id="${id}-title"`), `${id} heading needs a matching id`);
   }

@@ -172,7 +172,7 @@ const relevantWork = [
     url: "https://arxiv.org/pdf/2607.24536",
   },
   {
-    title: "Wearable Memory Assistance",
+    title: "Wearable Assistance",
     image: "/works/12_Wearable_Assistance.png",
     url: "https://www.media.mit.edu/projects/memoro/overview/",
   },
@@ -397,7 +397,7 @@ export default function Home() {
 
       <main id="main">
         <section className="hero" id="top">
-          <div className="shell hero-inner">
+          <div className="shell hero-head">
             <div className="meta-row">
               <span>
                 <Icon name="calendar" />
@@ -412,10 +412,28 @@ export default function Home() {
             <h1>
               Cyber-Physical Systems for Accessibility and Ability Augmentation
             </h1>
-            <p className="hero-lead">
-              This UIST 2026 workshop brings together diverse communities in HCI, AI, wearables, robotics, extended reality, and smart environments to chart the future of cyber-physical systems (CPS) that support and augment human abilities in everyday life.
-            </p>
+          </div>
 
+          {/* Duplicated once so the track can loop seamlessly; the copy is
+              hidden from assistive tech. */}
+          <div className="marquee hero-marquee">
+            <ul className="marquee-track">
+              {relevantWork.map((work) => (
+                <li key={work.title}>
+                  <WorkCard work={work} />
+                </li>
+              ))}
+            </ul>
+            <ul className="marquee-track" aria-hidden="true">
+              {relevantWork.map((work) => (
+                <li key={`${work.title}-copy`}>
+                  <WorkCard work={work} clone />
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="shell hero-foot">
             <div className="actions">
               <a className="btn btn-solid" href={REGISTER_URL} target="_blank" rel="noreferrer">
                 <Icon name="clipboard" />
@@ -441,8 +459,8 @@ export default function Home() {
 
                 <p>
                   This workshop brings together researchers and practitioners from diverse communities working on CPS for accessibility and human ability augmentation. 
-                  The goal is to exchange transferable insights, identify shared challenges and opportunities, and shape a common research agenda. 
-                  Relevant fields include, but are not limited to:
+                  Through a full-day interactive program, we aim to exchange transferable insights, identify shared challenges and opportunities, and shape a common research agenda for the field. 
+                  Relevant topics include, but are not limited to:
                 </p>
                 <div className="chip-row">
                   {callAreas.map((area) => (
@@ -512,34 +530,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="band band-paper" id="work" aria-labelledby="work-title">
-          <div className="shell">
-            <div className="band-head">
-              <h2 id="work-title">Relevant Works</h2>
-            </div>
-          </div>
-
-          {/* Duplicated once so the track can loop seamlessly; the copy is
-              hidden from assistive tech. */}
-          <div className="marquee">
-            <ul className="marquee-track">
-              {relevantWork.map((work) => (
-                <li key={work.title}>
-                  <WorkCard work={work} />
-                </li>
-              ))}
-            </ul>
-            <ul className="marquee-track" aria-hidden="true">
-              {relevantWork.map((work) => (
-                <li key={`${work.title}-copy`}>
-                  <WorkCard work={work} clone />
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        <section className="band band-white" id="outcomes" aria-labelledby="outcomes-title">
+        <section className="band band-paper" id="outcomes" aria-labelledby="outcomes-title">
           <div className="shell">
             <div className="band-head">
               <h2 id="outcomes-title">Workshop Outcomes</h2>
@@ -563,7 +554,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="band band-paper" id="organizers" aria-labelledby="organizers-title">
+        <section className="band band-white" id="organizers" aria-labelledby="organizers-title">
           <div className="shell">
             <div className="band-head">
               <h2 id="organizers-title">
