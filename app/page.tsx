@@ -459,7 +459,7 @@ export default function Home() {
 
                 <p>
                   This workshop brings together researchers and practitioners from diverse communities working on CPS for accessibility and human ability augmentation. 
-                  Through a full-day interactive program, we aim to exchange transferable insights, identify shared challenges and opportunities, and shape a common research agenda for the field. 
+                  Through a full-day interactive program, we aim to exchange transferable insights, identify shared challenges and opportunities, and shape a future research agenda. 
                   Relevant topics include, but are not limited to:
                 </p>
                 <div className="chip-row">
