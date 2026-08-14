@@ -50,7 +50,7 @@ const schedule = [
   {
     time: "9:00 - 9:30",
     title: "Opening & Icebreaker",
-    body: "Participants will introduce themselves, share their expertise, and identify complementary interests.",
+    body: "The organizers will first introduce the workshop's agenda and goals. Participants will then introduce themselves and identify complementary interests.",
   },
   {
     time: "9:30 - 10:15",
