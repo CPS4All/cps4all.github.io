@@ -68,13 +68,14 @@ export default function Home() {
               However, realizing this potential requires addressing key challenges in context sensing, user modeling, adaptive interaction, privacy, and evaluation to ensure CPS are reliable and effective in real-world settings.
             </p>
             <p>
-              This workshop will bring together researchers and practitioners across HCI, AI, wearables, robotics, XR, smart environments, accessibility, and ability augmentation to examine shared strategies and challenges for designing accessibility- and ability-centered CPS.
+              This workshop will bring together researchers and practitioners across HCI, AI, wearables, robotics, XR, smart environments, accessibility, and ability augmentation to examine shared strategies and challenges for designing accessibility- and ability-centered CPS. Through panel discussions, interactive demos, and mixed-group design activities, participants will identify design principles, technical challenges, and future directions for CPS that support and augment human abilities in real-world settings.
             </p>
             <p>
-              Through panel discussions, interactive demos, and mixed-group design activities, participants will identify design principles, technical challenges, and future directions for CPS that support and augment human abilities in real-world settings.
-            </p>
-            <p>
-              This workshop builds on the UIST 2025 workshop, "Accessible Cyber-Physical Activities" [https://accessible-cps.github.io], and broadens the conversation from accessibility to human ability augmentation across technologies, applications, and research communities.
+              This workshop builds on the UIST 2025 workshop,{" "}
+              <a href="https://accessible-cps.github.io" target="_blank" rel="noreferrer">
+                Accessible Cyber-Physical Activities
+              </a>
+              , and broadens the conversation from accessibility to human ability augmentation across technologies, applications, and research communities.
             </p>
           </div>
         </section>
