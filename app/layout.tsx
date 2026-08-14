@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { headers } from "next/headers";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -13,6 +13,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const viewport: Viewport = {
+  themeColor: "#6b3fc9",
+};
+
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
   const host = requestHeaders.get("host") ?? "cps4all.github.io";
@@ -22,7 +26,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: new URL(baseUrl),
     title: "CPS for Accessibility & Ability Augmentation · UIST 2026",
-    description: "A UIST 2026 workshop exploring cyber-physical systems that support accessibility and augment human abilities in daily life.",
+    description: "A full-day UIST 2026 workshop bringing together the wearables, robotics, XR, and smart-environment communities around cyber-physical systems that support accessibility and augment human abilities in everyday life.",
     icons: { icon: "/figure1.png", shortcut: "/figure1.png" },
     openGraph: {
       title: "Cyber-Physical Systems for Accessibility and Ability Augmentation: Bridging Diverse Communities",

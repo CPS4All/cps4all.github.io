@@ -14,82 +14,241 @@ async function render() {
   );
 }
 
-test("server-renders the complete workshop page", async () => {
-  const response = await render();
-  assert.equal(response.status, 200);
-  assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
+let cachedHtml;
 
-  const html = await response.text();
-  assert.match(html, /class="title-line">Cyber-Physical Systems<\/span>/);
-  assert.match(html, /class="title-line title-accent">for Accessibility and Ability Augmentation<\/span>/);
-  assert.match(html, /November 2, 2026/);
-  assert.match(html, /class="location">Location: Renaissance Center<\/p>/);
-  assert.doesNotMatch(html, /Detroit Marriott/);
-  assert.match(html, /href="https:\/\/forms\.gle\/sQSKbdvGa99BGCcB6"[^>]*>\s*Register \(Google Form\)\s*<\/a>/);
-  assert.doesNotMatch(html, /aria-disabled="true"/);
-  assert.match(html, /href="\/CPS4All_Proposal\.pdf"[^>]*>\s*Workshop Proposal\s*<\/a>/);
+async function html() {
+  if (!cachedHtml) {
+    const response = await render();
+    assert.equal(response.status, 200);
+    assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
+    cachedHtml = await response.text();
+  }
+
+  return cachedHtml;
+}
+
+const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+
+test("renders the masthead, hero, and event details", async () => {
+  const page = await html();
+
+  assert.match(page, /class="skip-link" href="#main"/);
+  assert.match(page, /class="brand-name">CPS for All</);
+  assert.match(page, /class="brand-sub">UIST 2026 Workshop</, "the masthead names the venue");
+  assert.doesNotMatch(page, /class="eyebrow"/, "date and place replaced the hero eyebrow");
   assert.ok(
-    html.indexOf("forms.gle") < html.indexOf("CPS4All_Proposal.pdf") &&
-      html.indexOf("CPS4All_Proposal.pdf") < html.indexOf("uist.acm.org/2026/workshops"),
-    "hero buttons should run register, proposal, then UIST main site",
+    page.indexOf('class="meta-row"') < page.indexOf("<h1>"),
+    "date and place sit above the hero title",
   );
-  assert.match(html, /Mixed-Group Discussion/);
-  assert.doesNotMatch(html, /Mixed-Group Design &amp; Discussion/);
-  assert.match(html, /Pattie Maes/);
-  assert.match(html, /xsc14thu@gmail\.com/);
-  assert.match(html, /\/figure1\.png/);
+  assert.match(page, /Cyber-Physical Systems for Accessibility and Ability Augmentation/);
+  assert.match(page, /Cyber-Physical Systems for Accessibility and Ability Augmentation/);
+  assert.match(page, /Nov(ember)? 2, 2026/);
+  assert.match(page, /Detroit/);
+  assert.doesNotMatch(page, /Venue Map|maps\.google|google\.com\/maps/);
+  assert.match(page, /class="brand-mark" aria-hidden="true"/, "the masthead carries the CPS badge");
+
+  // Hero calls to action, in order.
   assert.ok(
-    html.indexOf("alt=\"Smart environments") > html.indexOf("About the Workshop") &&
-      html.indexOf("alt=\"Smart environments") < html.indexOf("Schedule</h2>"),
-    "workshop figure should sit inside the about section",
+    page.indexOf("forms.gle/sQSKbdvGa99BGCcB6") <
+      page.indexOf("/CPS4All_Proposal.pdf", page.indexOf("hero-inner")) &&
+      page.indexOf("hero-inner") < page.indexOf('id="about"'),
+    "hero should lead with the registration form",
   );
-  assert.match(html, /\/organizers\/riku\.jpg/);
-  assert.match(html, /\/organizers\/shuchang\.png/);
-  assert.match(html, /\/organizers\/pattie\.png/);
-  assert.doesNotMatch(html, /\/_next\/image\?/);
-  assert.match(html, /\* equal contributions/);
-  assert.match(html, /href="https:\/\/shuchangxu\.github\.io\/"[^>]*>Shuchang Xu\*<\/a>/);
-  assert.match(html, /href="https:\/\/www\.media\.mit\.edu\/people\/pattie\/overview\/"[^>]*>Pattie Maes<\/a>/);
-  assert.equal((html.match(/class="person/g) ?? []).length, (html.match(/<h3><a href="http/g) ?? []).length);
-  assert.match(html, /HKUST, MIT Media Lab/);
-  assert.match(html, /href="https:\/\/accessible-cps\.github\.io"[^>]*>Accessible Cyber-Physical Activities<\/a>/);
-  assert.doesNotMatch(html, /\[https:\/\/accessible-cps\.github\.io\]/);
-  assert.match(html, /class="announcement-section" aria-labelledby="keynote-speakers-title"/);
-  assert.match(html, /id="keynote-speakers-title">Keynote Speakers<\/h2><p>To be Announced<\/p>/);
-  assert.match(html, /id="panelists-title">Panelists<\/h2><p>To be Announced<\/p>/);
-  assert.match(html, /id="presentations-title">Demo &amp; Poster Presentations<\/h2><p>To be Announced<\/p>/);
-  assert.doesNotMatch(html, /class="announcement-grid"|<article class="content-card">/);
-  assert.doesNotMatch(html, /Speaker to be announced/);
-  assert.doesNotMatch(html, /Contact Us<\/a> \(xsc14thu@gmail\.com\)/);
-  assert.match(html, /https:\/\/cps4all\.github\.io\/og\.png/);
-  assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/);
+  assert.doesNotMatch(page, /stat-strip|stat-grid/, "the at-a-glance stat strip is gone");
+  assert.match(page, /href="https:\/\/uist\.acm\.org\/2026\/workshops\/"/);
+  assert.doesNotMatch(page, /aria-disabled="true"/);
 });
 
-test("includes accessible section structure and image text", async () => {
-  const response = await render();
-  const html = await response.text();
-  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+test("renders every content section in order", async () => {
+  const page = await html();
+  const order = [
+    'id="top"',
+    'id="about"',
+    'id="program"',
+    'id="topics"',
+    'id="work"',
+    'id="outcomes"',
+    'id="organizers"',
+    'id="participate"',
+    'id="history"',
+    "site-foot",
+  ];
 
-  assert.match(html, /aria-labelledby="about-title"/);
-  assert.match(html, /scope="col"/);
-  assert.match(html, /alt="Smart environments, wearables, extended reality, and robotics connected through transferable insights\."/);
+  let cursor = -1;
+  for (const marker of order) {
+    const at = page.indexOf(marker);
+    assert.ok(at > cursor, `${marker} should appear after the previous section`);
+    cursor = at;
+  }
+
+  for (const id of ["about", "program", "topics", "work", "outcomes", "organizers", "participate", "history"]) {
+    assert.match(page, new RegExp(`aria-labelledby="${id}-title"`), `${id} section needs a labelled heading`);
+    assert.match(page, new RegExp(`id="${id}-title"`), `${id} heading needs a matching id`);
+  }
+});
+
+test("renders the relevant-work marquee", async () => {
+  const page = await html();
+
+  assert.equal((page.match(/class="marquee-track"/g) ?? []).length, 2, "a duplicate track makes the loop seamless");
+  assert.match(page, /class="marquee-track" aria-hidden="true"/, "the duplicate is hidden from assistive tech");
+  assert.match(page, /\/works\/research_2\.png/);
+  assert.doesNotMatch(page, /research_1\.png|Cooking/, "the cooking work was pulled");
+  assert.match(page, /href="https:\/\/arxiv\.org\/abs\/2407\.13515"/);
+  assert.match(page, /Context Sensing/);
+  assert.equal((page.match(/class="work-card"/g) ?? []).length, 24, "twelve works, rendered twice");
+  assert.match(page, /href="https:\/\/ceal\.cs\.columbia\.edu\/streetnav\/"/);
+  // The work with no link is a plain card, never an empty anchor.
+  assert.doesNotMatch(page, /<a[^>]*class="work-card"(?![^>]*href=)/);
+  assert.match(page, /<div class="work-card"><img src="\/works\/10_AR_Guidance\.png"/);
+
+  // The loop must stop for reduced-motion users, and pause on hover or focus.
+  assert.match(css, /@keyframes marquee/);
+  assert.match(css, /prefers-reduced-motion[\s\S]*\.marquee-track\s*\{\s*animation:\s*none/);
+  assert.match(css, /\.marquee:focus-within \.marquee-track[\s\S]*?animation-play-state:\s*paused/);
+});
+
+test("renders the five workshop topics with their guiding questions", async () => {
+  const page = await html();
+  const topics = [
+    ["Sensing and User Modeling", "robustly sense, interpret, and model users"],
+    ["Interaction Paradigms", "preserving user agency"],
+    ["End-User Adaptation", "needs, abilities, preferences, and physical environments"],
+    ["Real-World Evaluation", "real-world usability and long-term impact"],
+    ["Privacy and Ethics", "bystander consent"],
+  ];
+
+  for (const [title, question] of topics) {
+    assert.match(page, new RegExp(title));
+    assert.match(page, new RegExp(question));
+  }
+
+  assert.equal((page.match(/class="topic-card"/g) ?? []).length, topics.length);
+  assert.doesNotMatch(page, /class="topic-num"/, "topic cards are unnumbered");
+});
+
+test("renders the full-day schedule as a timeline", async () => {
+  const page = await html();
+  const times = [
+    "9:00 - 9:30",
+    "9:30 - 10:15",
+    "10:15 - 11:00",
+    "11:00 - 12:00",
+    "12:00 - 13:45",
+    "13:45 - 14:45",
+    "14:45 - 15:30",
+    "15:30 - 16:15",
+    "16:15 - 17:00",
+  ];
+
+  let cursor = page.indexOf('id="program"');
+  for (const time of times) {
+    const at = page.indexOf(time, cursor);
+    assert.ok(at > cursor, `${time} should appear in schedule order`);
+    cursor = at;
+  }
+
+  assert.equal((page.match(/class="rail-item/g) ?? []).length, times.length);
+  assert.equal((page.match(/class="rail-item rail-break"/g) ?? []).length, 1, "lunch is the one break");
+  assert.match(page, /Demo &amp; Poster Session/);
+  assert.match(page, /Mixed-Group Design and Discussion/);
+
+  assert.doesNotMatch(page, /tba-card|To be announced/, "the to-be-announced cards are pulled for now");
+});
+
+test("renders participation, outcomes, and workshop lineage", async () => {
+  const page = await html();
+
+  assert.equal(
+    (page.match(/href="https:\/\/forms\.gle\/sQSKbdvGa99BGCcB6"/g) ?? []).length,
+    4,
+    "form linked from the header bar, the drawer, the hero, and the register section",
+  );
+  // Register and contact share one card.
+  assert.match(page, /accessibility needs, please contact us/);
+  assert.match(page, /class="band-actions"/);
+  assert.match(page, /href="mailto:xsc14thu@gmail\.com"/);
+  assert.match(page, /class="chip-row"/);
+  assert.match(page, /Ubiquitous Computing/);
+
+  assert.equal((page.match(/class="output-card"/g) ?? []).length, 4);
+  assert.match(page, /class="output-num">01</);
+  assert.match(page, /class="output-num">04</);
+  assert.match(page, /Workshop Report/);
+  // The title sits beside the number, and the category pill is gone.
+  assert.match(page, /class="output-num">01<\/span><h3>Shared Insights<\/h3>/);
+  assert.doesNotMatch(page, /output-tag/);
+
+  assert.match(page, /href="https:\/\/accessible-cps\.github\.io"/);
+  assert.match(page, /Accessible Cyber-Physical Activities/);
+  assert.ok(
+    page.indexOf("Accessible Cyber-Physical Activities") > page.indexOf('id="history"'),
+    "the lineage note lives in the workshop history section",
+  );
+  assert.doesNotMatch(page, /\[https:\/\/accessible-cps\.github\.io\]/);
+});
+
+test("renders all fourteen organizers with links and portraits", async () => {
+  const page = await html();
+
+  assert.equal((page.match(/class="person"/g) ?? []).length, 14);
+  assert.equal((page.match(/class="person-star">\*/g) ?? []).length, 8, "eight equal-contribution organizers");
+  assert.match(page, /\* equal contributions/);
+  assert.match(
+    css,
+    /\.band-head:has\(\.people-note\)\s*\{[^}]*display:\s*flex/s,
+    "the note sits beside the organizers title, not under it",
+  );
+
+  assert.match(page, /href="https:\/\/shuchangxu\.github\.io\/"[^>]*class="person"|class="person"[^>]*href="https:\/\/shuchangxu\.github\.io\/"/);
+  assert.match(page, /Pattie Maes/);
+  assert.match(page, /\/organizers\/riku\.jpg/);
+  assert.match(page, /\/organizers\/shuchang\.png/);
+  assert.match(page, /\/organizers\/nandi\.jpeg/);
+  assert.match(page, /alt="Portrait of Brian A\. Smith"/);
+  assert.doesNotMatch(page, /\/_next\/image\?/);
+});
+
+test("keeps the figure, contact route, and social metadata intact", async () => {
+  const page = await html();
+
+  assert.match(page, /\/figure1\.png/);
+  assert.ok(
+    page.indexOf("/figure1.png") > page.indexOf('id="about"') &&
+      page.indexOf("/figure1.png") < page.indexOf('id="topics"'),
+    "the workshop figure belongs in the about section",
+  );
+  assert.match(page, /alt="Four illustrated scenes/);
+
+  assert.match(page, /href="mailto:xsc14thu@gmail\.com"/);
+  assert.match(page, /https:\/\/cps4all\.github\.io\/og\.png/);
+  assert.match(page, /name="theme-color" content="#6b3fc9"/);
+  assert.doesNotMatch(page, /codex-preview|Your site is taking shape|react-loading-skeleton/);
+});
+
+test("styles the purple design system accessibly", () => {
+  assert.match(css, /--brand:\s*#6b3fc9/);
+  assert.match(css, /--brand-deep:\s*#532aa3/);
+  assert.doesNotMatch(css, /#008190|#00a0b2|#00646f|#04343c/i, "the teal palette should be gone");
+
+  // The masthead badge is a circle.
+  assert.match(css, /\.brand-mark\s*\{[^}]*border-radius:\s*50%/s);
+
+  assert.match(css, /\.site-head\s*\{[^}]*position:\s*sticky/s);
+  assert.match(css, /scroll-padding-top:\s*calc\(var\(--head-h\)/);
+  assert.match(css, /:focus-visible\s*\{[^}]*outline:\s*3px solid/s);
+  assert.match(css, /\.sr-only/);
   assert.match(css, /prefers-reduced-motion/);
-  assert.match(css, /--accent:\s*#0a8c9c/);
-  assert.match(css, /\.title-line\s*\{[^}]*white-space:\s*nowrap/s);
-  assert.match(css, /font-size:\s*clamp\(32px,\s*5\.2vw,\s*58px\)/);
-  assert.match(css, /h1\s*\{[^}]*font-weight:\s*700/s);
-  const dateSize = css.match(/\.date\s*\{[^}]*font-size:\s*([^;]+);/s)?.[1];
-  const locationSize = css.match(/\.location\s*\{[^}]*font-size:\s*([^;]+);/s)?.[1];
-  assert.ok(dateSize && dateSize === locationSize, "date and location should share one font size");
-  assert.match(css, /h1\s*\{[^}]*margin:\s*clamp\(30px,\s*3\.6vw,\s*44px\) auto clamp\(24px,\s*3\.2vw,\s*36px\)/s);
-  assert.doesNotMatch(css, /font-family:\s*var\(--font-serif\)/);
-  assert.match(css, /\.about-copy p\s*\{[^}]*max-width:\s*68ch/s);
-  assert.match(css, /\.about-copy p\s*\{[^}]*line-height:\s*1\.78/s);
-  assert.match(css, /@media \(max-width: 1180px\)\s*\{\s*\.title-line\s*\{\s*white-space:\s*normal;/);
-  assert.match(css, /@media \(max-width: 760px\)[\s\S]*\.btn\s*\{\s*width:\s*min\(100%,\s*65vw\);/);
-  assert.match(css, /width:\s*min\(100%,\s*408px\)/);
-  assert.match(css, /\.about-copy\s*\{[^}]*padding:\s*clamp\(36px,\s*6vw,\s*72px\)/s);
-  assert.match(css, /\.about-copy\s*\{[^}]*border:\s*2px solid #b6dfe3/s);
-  assert.doesNotMatch(css, /\.announcement-section\s*\+\s*\.announcement-section[^}]*border/);
-  assert.match(css, /body\s*\{[^}]*background-image:\s*\n?\s*radial-gradient\([^;]*linear-gradient\(/s);
+  // The drifting gradients must stop for reduced-motion users.
+  assert.match(css, /@keyframes hero-flow/);
+  assert.match(css, /@keyframes cta-flow/);
+  assert.match(css, /prefers-reduced-motion[\s\S]*\.hero,\s*\.band-cta\s*\{\s*animation:\s*none/);
+
+  // The timeline rail and the mobile fallback that hides it. The empty mark
+  // column must stretch or the connecting line collapses to the row gap.
+  assert.match(css, /\.rail-mark\s*\{[^}]*align-self:\s*stretch/s);
+  assert.match(css, /\.rail-mark::after\s*\{[^}]*border-radius:\s*50%/s);
+  assert.match(css, /@media \(max-width: 680px\)[\s\S]*\.rail-mark\s*\{\s*display:\s*none/);
+  // Nav collapses into the details drawer on narrow screens.
+  assert.match(css, /@media \(max-width: 900px\)[\s\S]*\.nav\s*\{\s*display:\s*none/);
 });
