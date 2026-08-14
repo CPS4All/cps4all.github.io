@@ -70,7 +70,7 @@ export default function Home() {
               alt="Smart environments, wearables, extended reality, and robotics connected through transferable insights."
             />
             <p>
-              This workshop brings together researchers and practitioners from HCI, AI, wearables, robotics, XR, smart environments, accessibility, and human ability augmentation to foster collaboration and innovation. Through panels, interactive demonstrations, and mixed-group design activities, participants will identify emerging design principles, surface key technical and human-centered challenges, and chart future directions for CPS that support and augment human abilities in everyday life.
+              This workshop brings together researchers and practitioners from HCI, AI, wearables, robotics, XR, smart environments, accessibility, and human ability augmentation to examine shared strategies and challenges for designing accessibility- and ability-centered CPS. Through panels, interactive demonstrations, and mixed-group design activities, participants will identify emerging design principles, surface key technical and human-centered challenges, and chart future directions for CPS that support and augment human abilities in everyday life.
             </p>
           </div>
         </section>

@@ -21,8 +21,7 @@ test("server-renders the complete workshop page", async () => {
 
   const html = await response.text();
   assert.match(html, /class="title-line">Cyber-Physical Systems<\/span>/);
-  assert.match(html, /class="title-line title-accent">for Accessibility and Ability Augmentation:<\/span>/);
-  assert.match(html, /class="title-line title-sub">Bridging Diverse Communities<\/span>/);
+  assert.match(html, /class="title-line title-accent">for Accessibility and Ability Augmentation<\/span>/);
   assert.match(html, /November 2, 2026/);
   assert.match(html, /class="location">Location: Renaissance Center<\/p>/);
   assert.doesNotMatch(html, /Detroit Marriott/);
@@ -76,7 +75,8 @@ test("includes accessible section structure and image text", async () => {
   assert.match(css, /\.title-line\s*\{[^}]*white-space:\s*nowrap/s);
   assert.match(css, /font-size:\s*clamp\(32px,\s*5\.2vw,\s*58px\)/);
   assert.match(css, /h1\s*\{[^}]*font-weight:\s*700/s);
-  assert.doesNotMatch(css, /\.title-sub\s*\{[^}]*font-size/s);
+  assert.match(css, /\.date\s*\{[^}]*font-size:\s*16px/s);
+  assert.match(css, /\.location\s*\{[^}]*font-size:\s*16px/s);
   assert.match(css, /h1\s*\{[^}]*margin:\s*clamp\(30px,\s*3\.6vw,\s*44px\) auto clamp\(24px,\s*3\.2vw,\s*36px\)/s);
   assert.doesNotMatch(css, /font-family:\s*var\(--font-serif\)/);
   assert.match(css, /\.about-copy p\s*\{[^}]*max-width:\s*68ch/s);

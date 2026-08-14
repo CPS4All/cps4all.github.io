@@ -81,11 +81,11 @@ h1 {
 .date {
   margin: 0 0 6px;
   color: var(--accent);
-  font-size: clamp(19px, 3vw, 24px);
+  font-size: 16px;
   font-weight: 400;
 }
 
-.location { margin: 0; font-size: clamp(19px, 3vw, 24px); }
+.location { margin: 0; font-size: 16px; }
 
 .cta-row {
   display: flex;
