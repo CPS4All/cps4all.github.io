@@ -383,6 +383,9 @@ img {
 
 .hero-head {
   padding-top: clamp(3.2rem, 7vw, 5.6rem);
+  /* So the title can size itself against the real column width; vw would
+     over-count by the scrollbar and push the first line past the edge. */
+  container-type: inline-size;
 }
 
 .hero-foot {
@@ -390,11 +393,19 @@ img {
 }
 
 /* Sized so the second line still fits the shell on a laptop screen; balancing
-   is off because the break is already chosen by hand. */
+   is off because the break is already chosen by hand. The second term keeps the
+   first line on one row down to the narrowest phones: "Cyber-Physical Systems"
+   measures 11.48em at this weight, so 8.5cqi of the column always fits. */
 .hero h1 {
-  font-size: clamp(2.15rem, 4.2vw, 3.25rem);
+  font-size: min(clamp(2.15rem, 4.2vw, 3.25rem), 8.5cqi);
   letter-spacing: -0.032em;
   text-wrap: wrap;
+}
+
+/* Without this the hyphen is a break opportunity, so narrow screens split the
+   name across two rows. */
+.hero h1 .title-lead {
+  white-space: nowrap;
 }
 
 /* The hero column is capped at 940px, but the strip reads better edge to edge;
@@ -402,10 +413,13 @@ img {
    page sideways. */
 /* The strip stops at the shell edge, and the cards fade out as they reach it
    so the clip reads as intentional rather than as a cut-off card. */
+/* The strip is a band of its own between the title and the buttons, so it gets
+   matching air on both sides rather than sitting tight against either. */
 .hero-marquee {
   position: relative;
   z-index: 1;
-  margin-top: 2.2rem;
+  margin-top: clamp(2.8rem, 5vw, 3.8rem);
+  margin-bottom: clamp(2.8rem, 5vw, 3.8rem);
   mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
 }
 
@@ -649,10 +663,11 @@ img {
 
 /* Two identical tracks slide together; when the first has moved its own width
    the second sits exactly where it started, so the loop has no seam. */
+/* Spacing lives with the placement rule (.hero-marquee) so the two single-class
+   selectors cannot fight over margin-top. */
 .marquee {
   display: flex;
   width: 100%;
-  margin-top: 2.2rem;
   overflow-x: auto;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
@@ -1144,6 +1159,16 @@ img {
 
   .hero::after {
     display: none;
+  }
+
+  /* Cards run at 0.85 of the desktop size so more of the strip is visible on a
+     phone; width and image height scale together to hold the crop. */
+  .marquee li {
+    width: 171px;
+  }
+
+  .marquee img {
+    height: 112px;
   }
 }
 

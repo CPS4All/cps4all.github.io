@@ -412,7 +412,7 @@ export default function Home() {
             {/* The break is explicit so the title reads the same at every
                 desktop width instead of re-flowing as the column grows. */}
             <h1>
-              Cyber-Physical Systems
+              <span className="title-lead">Cyber-Physical Systems</span>
               <br />
               for Accessibility and Ability Augmentation
             </h1>
@@ -466,13 +466,8 @@ export default function Home() {
                 <p>
                   This workshop brings together researchers and practitioners from diverse communities working on CPS for accessibility and human ability augmentation. 
                   Through a full-day interactive program, we aim to exchange transferable insights, identify shared challenges and opportunities, and shape a future research agenda. 
-                  Relevant topics include, but are not limited to:
                 </p>
-                <div className="chip-row">
-                  {callAreas.map((area) => (
-                    <span key={area}>{area}</span>
-                  ))}
-                </div>
+                
               </div>
 
             </div>
