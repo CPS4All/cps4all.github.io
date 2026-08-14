@@ -76,7 +76,8 @@ test("includes accessible section structure and image text", async () => {
   assert.match(css, /--accent:\s*#0a8c9c/);
   assert.match(css, /\.title-line\s*\{[^}]*white-space:\s*nowrap/s);
   assert.match(css, /font-size:\s*clamp\(32px,\s*5\.2vw,\s*58px\)/);
-  assert.match(css, /h1\s*\{[^}]*font-weight:\s*800/s);
+  assert.match(css, /h1\s*\{[^}]*font-weight:\s*700/s);
+  assert.doesNotMatch(css, /\.title-sub\s*\{[^}]*font-size/s);
   assert.match(css, /h1\s*\{[^}]*margin:\s*clamp\(30px,\s*3\.6vw,\s*44px\) auto clamp\(24px,\s*3\.2vw,\s*36px\)/s);
   assert.doesNotMatch(css, /font-family:\s*var\(--font-serif\)/);
   assert.match(css, /\.about-copy p\s*\{[^}]*max-width:\s*68ch/s);
