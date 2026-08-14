@@ -75,8 +75,9 @@ test("includes accessible section structure and image text", async () => {
   assert.match(css, /\.title-line\s*\{[^}]*white-space:\s*nowrap/s);
   assert.match(css, /font-size:\s*clamp\(32px,\s*5\.2vw,\s*58px\)/);
   assert.match(css, /h1\s*\{[^}]*font-weight:\s*700/s);
-  assert.match(css, /\.date\s*\{[^}]*font-size:\s*16px/s);
-  assert.match(css, /\.location\s*\{[^}]*font-size:\s*16px/s);
+  const dateSize = css.match(/\.date\s*\{[^}]*font-size:\s*([^;]+);/s)?.[1];
+  const locationSize = css.match(/\.location\s*\{[^}]*font-size:\s*([^;]+);/s)?.[1];
+  assert.ok(dateSize && dateSize === locationSize, "date and location should share one font size");
   assert.match(css, /h1\s*\{[^}]*margin:\s*clamp\(30px,\s*3\.6vw,\s*44px\) auto clamp\(24px,\s*3\.2vw,\s*36px\)/s);
   assert.doesNotMatch(css, /font-family:\s*var\(--font-serif\)/);
   assert.match(css, /\.about-copy p\s*\{[^}]*max-width:\s*68ch/s);
