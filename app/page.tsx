@@ -9,7 +9,6 @@ const CONTACT_EMAIL = "xsc14thu@gmail.com";
 const navLinks = [
   ["Overview", "#about"],
   ["Program", "#program"],
-  ["Topics", "#topics"],
   ["Organizers", "#organizers"],
 ];
 
