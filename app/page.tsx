@@ -124,61 +124,61 @@ const outcomes = [
 const relevantWork = [
   {
     title: "VR Accessibility",
-    image: "/works/research_2.png",
+    image: "/works/research_2.webp",
     url: "https://arxiv.org/abs/2501.13258",
   },
   {
     title: "Context Sensing",
-    image: "/works/research_3.png",
+    image: "/works/research_3.webp",
     url: "https://rikky0611.github.io/resource/paper/prism-tracker_imwut2022_paper.pdf",
   },
   {
     title: "Accessibility Robot",
-    image: "/works/research_4.png",
+    image: "/works/research_4.webp",
     url: "https://franklin-li.com/Accessible%20Robot.pdf",
   },
   {
     title: "AR Accessibility",
-    image: "/works/research_5.png",
+    image: "/works/research_5.webp",
     url: "https://arxiv.org/abs/2407.13515",
   },
   {
     title: "Accessible Navigation",
-    image: "/works/6_Accessible_Navigation.png",
+    image: "/works/6_Accessible_Navigation.webp",
     url: "https://ceal.cs.columbia.edu/streetnav/",
   },
   {
     title: "Multimodal Perception",
-    image: "/works/7_Multimodal_Perception.png",
+    image: "/works/7_Multimodal_Perception.webp",
     url: "https://ceal.cs.columbia.edu/sonicstage/",
   },
   {
     title: "Live Visual Descriptions",
-    image: "/works/8_Live_Description.png",
+    image: "/works/8_Live_Description.webp",
     url: "https://worldscribe.org",
   },
   {
     title: "Task Guidance",
-    image: "/works/9_Task_Guidance.png",
+    image: "/works/9_Task_Guidance.webp",
     url: "https://minahuh.com/Vid2Coach/",
   },
   {
     title: "Behavior Support",
-    image: "/works/10_AR_Guidance.png",
+    image: "/works/10_AR_Guidance.webp",
   },
   {
     title: "Memory Support",
-    image: "/works/11_Memory_Support.png",
+    image: "/works/11_Memory_Support.webp",
     url: "https://arxiv.org/pdf/2607.24536",
   },
   {
     title: "Wearable Assistance",
-    image: "/works/12_Wearable_Assistance.png",
+    image: "/works/12_Wearable_Assistance.webp",
     url: "https://www.media.mit.edu/projects/memoro/overview/",
   },
   {
     title: "Augmented Reasoning",
-    image: "/works/13_Augmented_Reasoning.png",
+    image: "/works/13_Augmented_Reasoning.webp",
     url: "https://www.media.mit.edu/projects/wearable-reasoner/overview/",
   },
 ];
@@ -199,20 +199,20 @@ const callAreas = [
 ];
 
 const organizers = [
-  { name: "Shuchang Xu", equal: true, affiliation: "HKUST · MIT Media Lab", image: "/organizers/shuchang.png", url: "https://shuchangxu.github.io/" },
-  { name: "Riku Arakawa", equal: true, affiliation: "Carnegie Mellon University", image: "/organizers/riku.jpg", url: "https://rikky0611.github.io/" },
-  { name: "Mina Huh", equal: true, affiliation: "UC Berkeley", image: "/organizers/mina.png", url: "https://minahuh.com/" },
-  { name: "Nandi Zhang", equal: true, affiliation: "University of Rochester", image: "/organizers/nandi.jpeg", url: "https://nandi-zhang.github.io/" },
-  { name: "Tianyu Zhang", equal: true, affiliation: "University of Rochester", image: "/organizers/tianyu.png", url: "https://tianyuzhang2001.com/" },
-  { name: "Wazeer Zulfikar", equal: true, affiliation: "MIT Media Lab", image: "/organizers/wazeer.png", url: "https://www.media.mit.edu/people/wazeer/overview/" },
-  { name: "Ruei-Che Chang", equal: true, affiliation: "University of Michigan", image: "/organizers/rueiche.png", url: "https://rueiche.com/" },
-  { name: "Yotam Sechayk", equal: true, affiliation: "University of Tokyo", image: "/organizers/yotam.png", url: "https://tomfluff.github.io/" },
-  { name: "Huamin Qu", equal: false, affiliation: "HKUST", image: "/organizers/huamin.png", url: "http://huamin.org/" },
-  { name: "Amy Pavel", equal: false, affiliation: "UC Berkeley", image: "/organizers/amy.png", url: "https://amypavel.com/" },
-  { name: "Franklin Mingzhe Li", equal: false, affiliation: "UNC-Chapel Hill", image: "/organizers/franklin.png", url: "https://franklin-li.com/" },
-  { name: "Yukang Yan", equal: false, affiliation: "University of Rochester", image: "/organizers/yukang.png", url: "https://rochester-bear-lab.github.io/yukang" },
-  { name: "Brian A. Smith", equal: false, affiliation: "Columbia University", image: "/organizers/brian.png", url: "https://ceal.cs.columbia.edu/people/" },
-  { name: "Pattie Maes", equal: false, affiliation: "MIT Media Lab", image: "/organizers/pattie.png", url: "https://www.media.mit.edu/people/pattie/overview/" },
+  { name: "Shuchang Xu", equal: true, affiliation: "HKUST · MIT Media Lab", image: "/organizers/shuchang.webp", url: "https://shuchangxu.github.io/" },
+  { name: "Riku Arakawa", equal: true, affiliation: "Carnegie Mellon University", image: "/organizers/riku.webp", url: "https://rikky0611.github.io/" },
+  { name: "Mina Huh", equal: true, affiliation: "UC Berkeley", image: "/organizers/mina.webp", url: "https://minahuh.com/" },
+  { name: "Nandi Zhang", equal: true, affiliation: "University of Rochester", image: "/organizers/nandi.webp", url: "https://nandi-zhang.github.io/" },
+  { name: "Tianyu Zhang", equal: true, affiliation: "University of Rochester", image: "/organizers/tianyu.webp", url: "https://tianyuzhang2001.com/" },
+  { name: "Wazeer Zulfikar", equal: true, affiliation: "MIT Media Lab", image: "/organizers/wazeer.webp", url: "https://www.media.mit.edu/people/wazeer/overview/" },
+  { name: "Ruei-Che Chang", equal: true, affiliation: "University of Michigan", image: "/organizers/rueiche.webp", url: "https://rueiche.com/" },
+  { name: "Yotam Sechayk", equal: true, affiliation: "University of Tokyo", image: "/organizers/yotam.webp", url: "https://tomfluff.github.io/" },
+  { name: "Huamin Qu", equal: false, affiliation: "HKUST", image: "/organizers/huamin.webp", url: "http://huamin.org/" },
+  { name: "Amy Pavel", equal: false, affiliation: "UC Berkeley", image: "/organizers/amy.webp", url: "https://amypavel.com/" },
+  { name: "Franklin Mingzhe Li", equal: false, affiliation: "UNC-Chapel Hill", image: "/organizers/franklin.webp", url: "https://franklin-li.com/" },
+  { name: "Yukang Yan", equal: false, affiliation: "University of Rochester", image: "/organizers/yukang.webp", url: "https://rochester-bear-lab.github.io/yukang" },
+  { name: "Brian A. Smith", equal: false, affiliation: "Columbia University", image: "/organizers/brian.webp", url: "https://ceal.cs.columbia.edu/people/" },
+  { name: "Pattie Maes", equal: false, affiliation: "MIT Media Lab", image: "/organizers/pattie.webp", url: "https://www.media.mit.edu/people/pattie/overview/" },
 ];
 
 const iconPaths: Record<string, React.ReactNode> = {
@@ -409,28 +409,34 @@ export default function Home() {
               </span>
             </div>
 
+            {/* The break is explicit so the title reads the same at every
+                desktop width instead of re-flowing as the column grows. */}
             <h1>
-              Cyber-Physical Systems for Accessibility and Ability Augmentation
+              Cyber-Physical Systems
+              <br />
+              for Accessibility and Ability Augmentation
             </h1>
           </div>
 
           {/* Duplicated once so the track can loop seamlessly; the copy is
               hidden from assistive tech. */}
-          <div className="marquee hero-marquee">
-            <ul className="marquee-track">
-              {relevantWork.map((work) => (
-                <li key={work.title}>
-                  <WorkCard work={work} />
-                </li>
-              ))}
-            </ul>
-            <ul className="marquee-track" aria-hidden="true">
-              {relevantWork.map((work) => (
-                <li key={`${work.title}-copy`}>
-                  <WorkCard work={work} clone />
-                </li>
-              ))}
-            </ul>
+          <div className="shell">
+            <div className="marquee hero-marquee">
+              <ul className="marquee-track">
+                {relevantWork.map((work) => (
+                  <li key={work.title}>
+                    <WorkCard work={work} />
+                  </li>
+                ))}
+              </ul>
+              <ul className="marquee-track" aria-hidden="true">
+                {relevantWork.map((work) => (
+                  <li key={`${work.title}-copy`}>
+                    <WorkCard work={work} clone />
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           <div className="shell hero-foot">
@@ -473,7 +479,7 @@ export default function Home() {
 
             <figure className="figure-card">
               <Image
-                src="/figure1.png"
+                src="/figure1.webp"
                 alt="Four illustrated scenes — a smart environment guiding a cooking task, a wearable assisting an arm movement, extended reality overlaying a cutting board, and a robot handing off an item — arranged around the phrase Bridging Diverse Communities, with arrows exchanging insights between them."
                 width={1570}
                 height={1512}
@@ -502,52 +508,6 @@ export default function Home() {
                     <h3>{item.title}</h3>
                     {item.body ? <p>{item.body}</p> : null}
                   </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="band band-white" id="topics" aria-labelledby="topics-title">
-          <div className="shell">
-            <div className="band-head">
-              <h2 id="topics-title">Five Key Topics</h2>
-            </div>
-
-            <div className="topic-grid">
-              {topics.map((topic) => (
-                <article
-                  className="topic-card"
-                  key={topic.title}
-                  style={{ "--accent": topic.accent } as React.CSSProperties}
-                >
-                  <Icon name={topic.icon} className="icon" />
-                  <h3>{topic.title}</h3>
-                  <p className="topic-q">{topic.question}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="band band-paper" id="outcomes" aria-labelledby="outcomes-title">
-          <div className="shell">
-            <div className="band-head">
-              <h2 id="outcomes-title">Workshop Outcomes</h2>
-            </div>
-
-            <div className="output-grid">
-              {outcomes.map((item) => (
-                <article
-                  className="output-card"
-                  key={item.id}
-                  style={{ "--accent": item.accent } as React.CSSProperties}
-                >
-                  <div className="output-top">
-                    <span className="output-num">{item.id}</span>
-                    <h3>{item.title}</h3>
-                  </div>
-                  <p>{item.body}</p>
                 </article>
               ))}
             </div>
@@ -586,6 +546,68 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="band band-paper" id="topics" aria-labelledby="topics-title">
+          <div className="shell">
+            <div className="band-head">
+              <h2 id="topics-title">Five Key Topics</h2>
+            </div>
+
+            <div className="topic-grid">
+              {topics.map((topic) => (
+                <article
+                  className="topic-card"
+                  key={topic.title}
+                  style={{ "--accent": topic.accent } as React.CSSProperties}
+                >
+                  <Icon name={topic.icon} className="icon" />
+                  <h3>{topic.title}</h3>
+                  <p className="topic-q">{topic.question}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="band band-white" id="outcomes" aria-labelledby="outcomes-title">
+          <div className="shell">
+            <div className="band-head">
+              <h2 id="outcomes-title">Workshop Outcomes</h2>
+            </div>
+
+            <div className="output-grid">
+              {outcomes.map((item) => (
+                <article
+                  className="output-card"
+                  key={item.id}
+                  style={{ "--accent": item.accent } as React.CSSProperties}
+                >
+                  <div className="output-top">
+                    <span className="output-num">{item.id}</span>
+                    <h3>{item.title}</h3>
+                  </div>
+                  <p>{item.body}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+      <section className="band band-paper" id="history" aria-labelledby="history-title">
+          <div className="shell">
+            <div className="band-head">
+              <h2 id="history-title">Workshop History</h2>
+            </div>
+
+            <p className="lineage">
+              This workshop builds on the{" "}
+              <a href={PRIOR_WORKSHOP_URL} target="_blank" rel="noreferrer">
+                Accessible Cyber-Physical Activities
+              </a>{" "}
+              workshop at UIST 2025.
+            </p>
+          </div>
+        </section>
+
         <section className="band band-dark band-cta" id="participate" aria-labelledby="participate-title">
           <div className="shell">
             <div className="band-head">
@@ -610,24 +632,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="band band-paper band-tail" id="history" aria-labelledby="history-title">
-          <div className="shell">
-            <div className="band-head">
-              <h2 id="history-title">Workshop History</h2>
-            </div>
-
-            <p className="lineage">
-              This workshop builds on the{" "}
-              <a href={PRIOR_WORKSHOP_URL} target="_blank" rel="noreferrer">
-                Accessible Cyber-Physical Activities
-              </a>{" "}
-              workshop at UIST 2025.
-            </p>
-          </div>
-        </section>
       </main>
 
-      <footer className="site-foot">
+      {/* <footer className="site-foot">
         <div className="shell foot-bar">
           <p>
             CPS for All · UIST 2026 Workshop
@@ -637,7 +644,7 @@ export default function Home() {
             Back to top
           </a>
         </div>
-      </footer>
+      </footer> */}
     </>
   );
 }

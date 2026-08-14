@@ -40,8 +40,9 @@ test("renders the masthead, hero, and event details", async () => {
     page.indexOf('class="meta-row"') < page.indexOf("<h1>"),
     "date and place sit above the hero title",
   );
-  assert.match(page, /Cyber-Physical Systems for Accessibility and Ability Augmentation/);
-  assert.match(page, /Cyber-Physical Systems for Accessibility and Ability Augmentation/);
+  // The hero title carries its own line break, so the two halves are adjacent
+  // rather than contiguous.
+  assert.match(page, /<h1>Cyber-Physical Systems<br\/?>for Accessibility and Ability Augmentation<\/h1>/);
   assert.match(page, /Nov(ember)? 2, 2026/);
   assert.match(page, /Detroit/);
   assert.doesNotMatch(page, /Venue Map|maps\.google|google\.com\/maps/);
@@ -77,7 +78,7 @@ test("renders every content section in order", async () => {
     'id="organizers"',
     'id="participate"',
     'id="history"',
-    "site-foot",
+    "</main>",
   ];
 
   let cursor = -1;
@@ -98,15 +99,15 @@ test("renders the relevant-work marquee", async () => {
 
   assert.equal((page.match(/class="marquee-track"/g) ?? []).length, 2, "a duplicate track makes the loop seamless");
   assert.match(page, /class="marquee-track" aria-hidden="true"/, "the duplicate is hidden from assistive tech");
-  assert.match(page, /\/works\/research_2\.png/);
-  assert.doesNotMatch(page, /research_1\.png|Cooking/, "the cooking work was pulled");
+  assert.match(page, /\/works\/research_2\.webp/);
+  assert.doesNotMatch(page, /research_1\.|Cooking/, "the cooking work was pulled");
   assert.match(page, /href="https:\/\/arxiv\.org\/abs\/2407\.13515"/);
   assert.match(page, /Context Sensing/);
   assert.equal((page.match(/class="work-card"/g) ?? []).length, 24, "twelve works, rendered twice");
   assert.match(page, /href="https:\/\/ceal\.cs\.columbia\.edu\/streetnav\/"/);
   // The work with no link is a plain card, never an empty anchor.
   assert.doesNotMatch(page, /<a[^>]*class="work-card"(?![^>]*href=)/);
-  assert.match(page, /<div class="work-card"><img src="\/works\/10_AR_Guidance\.png"/);
+  assert.match(page, /<div class="work-card"><img src="\/works\/10_AR_Guidance\.webp"/);
 
   // The loop must stop for reduced-motion users, and pause on hover or focus.
   assert.match(css, /@keyframes marquee/);
@@ -208,20 +209,22 @@ test("renders all fourteen organizers with links and portraits", async () => {
 
   assert.match(page, /href="https:\/\/shuchangxu\.github\.io\/"[^>]*class="person"|class="person"[^>]*href="https:\/\/shuchangxu\.github\.io\/"/);
   assert.match(page, /Pattie Maes/);
-  assert.match(page, /\/organizers\/riku\.jpg/);
-  assert.match(page, /\/organizers\/shuchang\.png/);
-  assert.match(page, /\/organizers\/nandi\.jpeg/);
+  assert.match(page, /\/organizers\/riku\.webp/);
+  assert.match(page, /\/organizers\/shuchang\.webp/);
+  assert.match(page, /\/organizers\/nandi\.webp/);
   assert.match(page, /alt="Portrait of Brian A\. Smith"/);
   assert.doesNotMatch(page, /\/_next\/image\?/);
+  // Every in-page image ships as WebP; only the social card stays a PNG.
+  assert.doesNotMatch(page, /src="[^"]+\.(png|jpe?g)"/);
 });
 
 test("keeps the figure, contact route, and social metadata intact", async () => {
   const page = await html();
 
-  assert.match(page, /\/figure1\.png/);
+  assert.match(page, /\/figure1\.webp/);
   assert.ok(
-    page.indexOf("/figure1.png") > page.indexOf('id="about"') &&
-      page.indexOf("/figure1.png") < page.indexOf('id="topics"'),
+    page.indexOf("/figure1.webp") > page.indexOf('id="about"') &&
+      page.indexOf("/figure1.webp") < page.indexOf('id="topics"'),
     "the workshop figure belongs in the about section",
   );
   assert.match(page, /alt="Four illustrated scenes/);

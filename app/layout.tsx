@@ -27,7 +27,7 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL(baseUrl),
     title: "CPS for Accessibility & Ability Augmentation · UIST 2026",
     description: "A full-day UIST 2026 workshop bringing together the wearables, robotics, XR, and smart-environment communities around cyber-physical systems that support accessibility and augment human abilities in everyday life.",
-    icons: { icon: "/figure1.png", shortcut: "/figure1.png" },
+    icons: { icon: "/figure1.webp", shortcut: "/figure1.webp" },
     openGraph: {
       title: "Cyber-Physical Systems for Accessibility and Ability Augmentation: Bridging Diverse Communities",
       description: "UIST 2026 Workshop · Detroit · November 2",

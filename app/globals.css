@@ -366,12 +366,18 @@ img {
   pointer-events: none;
 }
 
-/* Split in two so the work strip between them can run the full width of the
-   band while the copy stays in its 940px column. */
+/* Split in two so the work strip can sit between the title and the buttons.
+   All three are centred on the same axis, and the strip is held to the shell
+   width so it lines up with the sections below rather than bleeding out. */
 .hero-head,
 .hero-foot {
   position: relative;
   z-index: 1;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.hero-foot {
   max-width: 940px;
 }
 
@@ -383,23 +389,31 @@ img {
   padding-bottom: clamp(3.4rem, 7vw, 5.4rem);
 }
 
+/* Sized so the second line still fits the shell on a laptop screen; balancing
+   is off because the break is already chosen by hand. */
 .hero h1 {
+  font-size: clamp(2.15rem, 4.2vw, 3.25rem);
   letter-spacing: -0.032em;
+  text-wrap: wrap;
 }
 
 /* The hero column is capped at 940px, but the strip reads better edge to edge;
    the hero clips its own overflow, so the 100vw break-out cannot scroll the
    page sideways. */
+/* The strip stops at the shell edge, and the cards fade out as they reach it
+   so the clip reads as intentional rather than as a cut-off card. */
 .hero-marquee {
   position: relative;
   z-index: 1;
   margin-top: 2.2rem;
+  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
 }
 
 /* Date and place sit above the title, where the eyebrow pill used to. */
 .meta-row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.5rem;
   margin-bottom: 1.25rem;
 }
@@ -427,6 +441,7 @@ img {
 .actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.7rem;
   margin-top: 2rem;
 }
@@ -1019,12 +1034,6 @@ img {
 /* -------------------------------------------------------------- contact */
 
 /* --------------------------------------------------------------- footer */
-
-/* History and the footer meta share one paper block at the foot of the page,
-   so no rule runs between them. */
-.band-tail {
-  padding-bottom: clamp(2rem, 3.5vw, 3rem);
-}
 
 .site-foot {
   padding: 0 0 2.2rem;
