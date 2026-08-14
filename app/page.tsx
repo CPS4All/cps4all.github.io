@@ -8,7 +8,7 @@ const schedule = [
   ["13:45 - 14:30", "Keynote 2"],
   ["14:30 - 15:30", "Demo & Poster Session"],
   ["15:30 - 16:15", "Mixed-Group Discussion"],
-  ["16:15-17:00", "Closing"],
+  ["16:15 - 17:00", "Closing"],
 ];
 
 const organizers = [
@@ -59,7 +59,7 @@ export default function Home() {
           <h2 id="about-title">About the Workshop</h2>
           <div className="content-card about-copy">
             <p>
-              The powerful convergence of wearables, robotics, extended reality, and smart environments is expanding the design space for cyber-physical systems (CPS) that support and augment human abilities in daily life. By sensing real-world contexts, modeling user needs, and providing situated assistance, these systems can improve accessibility for people with disabilities while enhancing broader human abilities such as perception, memory, learning, and mobility.
+              The powerful convergence of wearables, robotics, extended reality, and smart environments is expanding the design space for cyber-physical systems (CPS) that support accessibility and augment human abilities in daily life. This workshop brings together diverse communities to examine shared strategies and challenges in designing accessibility- and ability-centered CPS. Through panels, interactive demos, and mixed-group design activities, participants will identify emerging design principles, surface key challenges, and chart future directions for CPS that support and augment human abilities in real-world settings.
             </p>
             <Image
               className="workshop-figure"
@@ -69,9 +69,6 @@ export default function Home() {
               unoptimized
               alt="Smart environments, wearables, extended reality, and robotics connected through transferable insights."
             />
-            <p>
-              This workshop brings together researchers and practitioners from HCI, AI, wearables, robotics, XR, smart environments, accessibility, and human ability augmentation to examine shared strategies and challenges for designing accessibility- and ability-centered CPS. Through panels, interactive demonstrations, and mixed-group design activities, participants will identify emerging design principles, surface key technical and human-centered challenges, and chart future directions for CPS that support and augment human abilities in everyday life.
-            </p>
           </div>
         </section>
 
