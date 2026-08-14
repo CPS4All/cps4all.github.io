@@ -146,10 +146,10 @@ export default function Home() {
           <h2 id="history-title">Workshop History</h2>
           <div className="content-card">
             <p>
-              This workshop builds on the UIST 2025 {" "}
+              This workshop builds on the UIST 2025 workshop {" "}
               <a href="https://accessible-cps.github.io" target="_blank" rel="noreferrer">
                 Accessible Cyber-Physical Activities
-              </a>{" "} workshop.
+              </a>.
             </p>
           </div>
         </section>
