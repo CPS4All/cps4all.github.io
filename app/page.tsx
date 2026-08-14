@@ -132,18 +132,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section aria-labelledby="history-title">
-          <h2 id="history-title">Workshop History</h2>
-          <div className="content-card">
-            <p>
-              This workshop builds on the UIST 2025 {" "}
-              <a href="https://accessible-cps.github.io" target="_blank" rel="noreferrer">
-                Accessible Cyber-Physical Activities
-              </a>{" "} workshop.
-            </p>
-          </div>
-        </section>
-
         <section aria-labelledby="questions-title">
           <h2 id="questions-title">Questions?</h2>
           <div className="content-card">
@@ -154,6 +142,18 @@ export default function Home() {
           </div>
         </section>
       </main>
+
+       <section aria-labelledby="history-title">
+          <h2 id="history-title">Workshop History</h2>
+          <div className="content-card">
+            <p>
+              This workshop builds on the UIST 2025 {" "}
+              <a href="https://accessible-cps.github.io" target="_blank" rel="noreferrer">
+                Accessible Cyber-Physical Activities
+              </a>{" "} workshop.
+            </p>
+          </div>
+        </section>
 
       <footer>
         <div className="wrap">
