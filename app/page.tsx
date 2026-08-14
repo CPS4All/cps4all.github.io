@@ -36,8 +36,7 @@ export default function Home() {
           <p className="badge">UIST 2026 Workshop</p>
           <h1>
             <span className="title-line">Cyber-Physical Systems</span>
-            <span className="title-line title-accent">for Accessibility and Ability Augmentation:</span>
-            <span className="title-line title-sub">Bridging Diverse Communities</span>
+            <span className="title-line title-accent">for Accessibility and Ability Augmentation</span>
           </h1>
           <p className="date">November 2, 2026</p>
           <p className="location">Location: Renaissance Center</p>
