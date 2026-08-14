@@ -318,40 +318,25 @@ img {
 
 /* ------------------------------------------------------------------ hero */
 
-/* The linear layer is oversized so its stops can drift across the band; the
-   radial highlights stay put (a full-size layer cannot visibly shift).
-   Vibrance comes from hue swings between stops, not from lighter stops —
-   #7a49d9 is the lightest the band can go and still clear 4.5:1 for the lead
-   paragraph, whichever part of the gradient drifts under it. */
+/* A still band that runs blue into purple; the hue swing carries the vibrance,
+   so no stop has to go dark to give the band depth. #3f6fd8 is the lightest
+   blue end that still clears 4.5:1 against the white lead paragraph, and the
+   purple end stops at #7a49d9 for the same reason. */
 .hero {
   position: relative;
   overflow: hidden;
   color: var(--white);
   background:
-    radial-gradient(900px 460px at 88% -10%, rgba(255, 255, 255, 0.22), transparent 62%),
-    radial-gradient(700px 520px at 4% 108%, rgba(255, 255, 255, 0.14), transparent 60%),
+    radial-gradient(900px 460px at 88% -10%, rgba(255, 255, 255, 0.18), transparent 62%),
+    radial-gradient(700px 520px at 4% 108%, rgba(255, 255, 255, 0.12), transparent 60%),
     linear-gradient(
       148deg,
-      #7a49d9 0%,
-      #5b3ae0 18%,
-      var(--brand) 36%,
-      #7b2fb8 54%,
-      #4a2a9e 72%,
-      var(--brand-deep) 86%,
-      var(--brand-dark) 100%
+      #3f6fd8 0%,
+      #4f56db 26%,
+      #6142d2 52%,
+      var(--brand) 74%,
+      #7a49d9 100%
     );
-  background-size: auto, auto, 300% 300%;
-  background-position: 50% 0%, 50% 100%, 0% 50%;
-  animation: hero-flow 24s ease-in-out infinite alternate;
-}
-
-@keyframes hero-flow {
-  from {
-    background-position: 50% 0%, 50% 100%, 0% 50%;
-  }
-  to {
-    background-position: 50% 0%, 50% 100%, 100% 50%;
-  }
 }
 
 .hero::after {
@@ -524,32 +509,18 @@ img {
   padding-left: clamp(0px, 4vw, 3.5rem);
 }
 
-/* The two call-to-action bands run brighter than a plain dark band — a lit
-   gradient that drifts, echoing the hero. */
+/* The two call-to-action bands run brighter than a plain dark band — the same
+   blue-to-purple ramp as the hero, at a shallower angle. */
 .band-cta {
   background:
-    radial-gradient(820px 460px at 88% -30%, rgba(255, 255, 255, 0.16), transparent 62%),
+    radial-gradient(820px 460px at 88% -30%, rgba(255, 255, 255, 0.14), transparent 62%),
     linear-gradient(
       125deg,
-      #7a49d9 0%,
-      #6d3ae8 20%,
-      var(--brand) 40%,
-      #8a2fbe 58%,
-      var(--brand-deep) 80%,
-      var(--brand-dark) 100%
+      #3f6fd8 0%,
+      #5a4bd9 32%,
+      var(--brand) 64%,
+      #7a49d9 100%
     );
-  background-size: auto, 300% 300%;
-  background-position: 50% 0%, 0% 50%;
-  animation: cta-flow 20s ease-in-out infinite alternate;
-}
-
-@keyframes cta-flow {
-  from {
-    background-position: 50% 0%, 0% 50%;
-  }
-  to {
-    background-position: 50% 0%, 100% 50%;
-  }
 }
 
 .band-cta .band-head :is(h1, h2) + p {
@@ -1186,11 +1157,6 @@ img {
 
   * {
     transition-duration: 1ms !important;
-  }
-
-  .hero,
-  .band-cta {
-    animation: none;
   }
 
   /* The track stops, so the row becomes a plain horizontal scroller. */

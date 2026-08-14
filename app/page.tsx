@@ -49,47 +49,47 @@ const schedule = [
   {
     time: "9:00 - 9:30",
     title: "Opening & Icebreaker",
-    body: "The organizers will first introduce the workshop's agenda and goals. Participants will then introduce themselves and identify complementary interests.",
+    // body: "The organizers will first introduce the workshop's agenda and goals. Participants will then introduce themselves and identify complementary interests.",
   },
   {
     time: "9:30 - 10:15",
     title: "Keynote I - Research Advances",
-    body: "Senior researchers will highlight recent advances in cyber-physical systems (CPS) and human augmentation.",
+    // body: "Senior researchers will highlight recent advances in cyber-physical systems (CPS) and human augmentation.",
   },
   {
     time: "10:15 - 11:00",
     title: "Keynote II - Industry Perspective",
-    body: "Industry perspectives on the challenges and opportunities of designing and deploying CPS in real-world settings.",
+    // body: "Industry perspectives on the challenges and opportunities of designing and deploying CPS in real-world settings.",
   },
   {
     time: "11:00 - 12:00",
     title: "Panel Discussion",
-    body: "Panelists from diverse backgrounds will discuss emerging opportunities, challenges, and directions in CPS and human augmentation.",
+    // body: "Panelists from diverse backgrounds will discuss emerging opportunities, challenges, and directions in CPS and human augmentation.",
   },
   {
     time: "12:00 - 13:45",
     title: "Lunch Break",
-    body: "Participants will connect and continue conversations over lunch.",
+    // body: "Participants will connect and continue conversations over lunch.",
   },
   {
     time: "13:45 - 14:45",
     title: "Demo & Poster Session",
-    body: "Participants will present demos and posters in an open session, moving between projects to exchange ideas, gather feedback, and identify potential collaborators.",
+    // body: "Participants will present demos and posters in an open session, moving between projects to exchange ideas, gather feedback, and identify potential collaborators.",
   },
   {
     time: "14:45 - 15:30",
     title: "Keynote III - Community Perspective",
-    body: "Community representatives will share lived experiences and perspectives on accessibility and ability augmentation technologies.",
+    // body: "Community representatives will share lived experiences and perspectives on accessibility and ability augmentation technologies.",
   },
   {
     time: "15:30 - 16:15",
     title: "Mixed-Group Design and Discussion",
-    body: "Participants will work in mixed groups to design for a specific user scenario, drawing on the workshop's five core topics.",
+    // body: "Participants will work in mixed groups to design for a specific user scenario, drawing on the workshop's five core topics.",
   },
   {
     time: "16:15 - 17:00",
     title: "Synthesis & Closing",
-    body: "Participants will synthesize key takeaways, identify next steps, and establish a shared communication channel for continued exchange.",
+    // body: "Participants will synthesize key takeaways, identify next steps, and establish a shared communication channel for continued exchange.",
   },
 ];
 
@@ -404,7 +404,7 @@ export default function Home() {
               </span>
               <span>
                 <Icon name="pin" />
-                UIST 2026
+                UIST Workshop
               </span>
             </div>
 
@@ -455,7 +455,7 @@ export default function Home() {
         <section className="band band-white" id="about" aria-labelledby="about-title">
           <div className="shell split">
             <div>
-              <h2 id="about-title">Workshop Theme: Bridging Diverse Communities</h2>
+              <h2 id="about-title">Workshop Overview</h2>
               <div className="prose">
                 <p>
                   The convergence of wearables, robotics, extended reality, and smart environments is expanding the design space for cyber-physical systems (CPS) that support and augment human abilities in everyday life. By sensing real-world contexts, modeling users’ needs, and delivering situated assistance, these systems can enhance capabilities such as perception, memory, learning, and mobility. 
@@ -486,10 +486,32 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="band band-paper" id="program" aria-labelledby="program-title">
+        <section className="band band-paper" id="topics" aria-labelledby="topics-title">
           <div className="shell">
             <div className="band-head">
-              <h2 id="program-title">A Full-Day Interactive Program</h2>
+              <h2 id="topics-title">Five Key Topics</h2>
+            </div>
+
+            <div className="topic-grid">
+              {topics.map((topic) => (
+                <article
+                  className="topic-card"
+                  key={topic.title}
+                  style={{ "--accent": topic.accent } as React.CSSProperties}
+                >
+                  <Icon name={topic.icon} className="icon" />
+                  <h3>{topic.title}</h3>
+                  <p className="topic-q">{topic.question}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="band band-white" id="program" aria-labelledby="program-title">
+          <div className="shell">
+            <div className="band-head">
+              <h2 id="program-title">Program</h2>
               <p></p>
             </div>
 
@@ -508,7 +530,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="band band-white" id="organizers" aria-labelledby="organizers-title">
+        <section className="band band-paper" id="organizers" aria-labelledby="organizers-title">
           <div className="shell">
             <div className="band-head">
               <h2 id="organizers-title">
@@ -540,29 +562,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="band band-paper" id="topics" aria-labelledby="topics-title">
-          <div className="shell">
-            <div className="band-head">
-              <h2 id="topics-title">Five Key Topics</h2>
-            </div>
-
-            <div className="topic-grid">
-              {topics.map((topic) => (
-                <article
-                  className="topic-card"
-                  key={topic.title}
-                  style={{ "--accent": topic.accent } as React.CSSProperties}
-                >
-                  <Icon name={topic.icon} className="icon" />
-                  <h3>{topic.title}</h3>
-                  <p className="topic-q">{topic.question}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="band band-white" id="outcomes" aria-labelledby="outcomes-title">
+        {/* <section className="band band-white" id="outcomes" aria-labelledby="outcomes-title">
           <div className="shell">
             <div className="band-head">
               <h2 id="outcomes-title">Workshop Outcomes</h2>
@@ -584,31 +584,15 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
-      <section className="band band-paper" id="history" aria-labelledby="history-title">
-          <div className="shell">
-            <div className="band-head">
-              <h2 id="history-title">Workshop History</h2>
-            </div>
-
-            <p className="lineage">
-              This workshop builds on the{" "}
-              <a href={PRIOR_WORKSHOP_URL} target="_blank" rel="noreferrer">
-                Accessible Cyber-Physical Activities
-              </a>{" "}
-              workshop at UIST 2025.
-            </p>
-          </div>
-        </section>
 
         <section className="band band-dark band-cta" id="participate" aria-labelledby="participate-title">
           <div className="shell">
             <div className="band-head">
               <h2 id="participate-title">Register Now!</h2>
               <p>
-                We welcome anyone interested in exploring cyber-physical systems for accessibility and ability
-                augmentation. If you have questions or accessibility needs, please contact us. We will do our
+                If you have any accessibility needs, please contact us. We will do our
                 best to accommodate your needs.
               </p>
             </div>
@@ -627,6 +611,22 @@ export default function Home() {
         </section>
 
       </main>
+
+        <section className="band band-white" id="history" aria-labelledby="history-title">
+          <div className="shell">
+            <div className="band-head">
+              <h2 id="history-title">Workshop History</h2>
+            </div>
+
+            <p className="lineage">
+              This workshop builds on the{" "}
+              <a href={PRIOR_WORKSHOP_URL} target="_blank" rel="noreferrer">
+                Accessible Cyber-Physical Activities
+              </a>{" "}
+              workshop at UIST 2025.
+            </p>
+          </div>
+        </section>
 
       {/* <footer className="site-foot">
         <div className="shell foot-bar">
