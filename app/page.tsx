@@ -71,7 +71,6 @@ const schedule = [
     time: "12:00 - 13:45",
     title: "Lunch Break",
     body: "Participants will connect and continue conversations over lunch.",
-    isBreak: true,
   },
   {
     time: "13:45 - 14:45",
