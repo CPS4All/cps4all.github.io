@@ -29,6 +29,11 @@ test("server-renders the complete workshop page", async () => {
   assert.match(html, /href="https:\/\/forms\.gle\/sQSKbdvGa99BGCcB6"[^>]*>\s*Register \(Google Form\)\s*<\/a>/);
   assert.doesNotMatch(html, /aria-disabled="true"/);
   assert.match(html, /href="\/CPS4All_Proposal\.pdf"[^>]*>\s*Workshop Proposal\s*<\/a>/);
+  assert.ok(
+    html.indexOf("forms.gle") < html.indexOf("CPS4All_Proposal.pdf") &&
+      html.indexOf("CPS4All_Proposal.pdf") < html.indexOf("uist.acm.org/2026/workshops"),
+    "hero buttons should run register, proposal, then UIST main site",
+  );
   assert.match(html, /Mixed-Group Discussion/);
   assert.doesNotMatch(html, /Mixed-Group Design &amp; Discussion/);
   assert.match(html, /Pattie Maes/);

@@ -95,8 +95,6 @@ h1 {
   margin-top: 28px;
 }
 
-.cta-row + .cta-row { margin-top: 12px; }
-
 .btn {
   display: inline-flex;
   min-height: 48px;

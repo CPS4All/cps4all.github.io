@@ -45,13 +45,11 @@ export default function Home() {
             <a className="btn" href="https://forms.gle/sQSKbdvGa99BGCcB6" target="_blank" rel="noreferrer">
               Register (Google Form)
             </a>
-            <a className="btn" href="https://uist.acm.org/2026/workshops/" target="_blank" rel="noreferrer">
-              UIST 2026 Main Site
-            </a>
-          </div>
-          <div className="cta-row">
             <a className="btn" href="/CPS4All_Proposal.pdf" target="_blank" rel="noreferrer">
               Workshop Proposal
+            </a>
+            <a className="btn" href="https://uist.acm.org/2026/workshops/" target="_blank" rel="noreferrer">
+              UIST 2026 Main Site
             </a>
           </div>
         </div>
@@ -62,7 +60,10 @@ export default function Home() {
           <h2 id="about-title">About the Workshop</h2>
           <div className="content-card about-copy">
             <p>
-              The convergence of wearables, robotics, extended reality, and smart environments is expanding the design space for cyber-physical systems (CPS) that support and augment human abilities in daily life. By sensing real-world contexts, modeling user needs, and providing situated assistance, these systems can improve accessibility for people with disabilities while enhancing broader human abilities such as perception, memory, learning, and mobility.
+              The powerful convergence of wearables, robotics, extended reality, and smart environments is expanding the design space for cyber-physical systems (CPS) that support and augment human abilities in daily life. By sensing real-world contexts, modeling user needs, and providing situated assistance, these systems can improve accessibility for people with disabilities while enhancing broader human abilities such as perception, memory, learning, and mobility.
+            </p>
+            <p>
+              This workshop brings together interdisciplinary researchers and practitioners from HCI, AI, wearables, robotics, XR, smart environments, accessibility, and human ability augmentation. Through panels, interactive demonstrations, and mixed-group design activities, participants will identify emerging design principles, surface key technical and human-centered challenges, and chart future directions for CPS that support and augment human abilities in real-world settings.
             </p>
             <Image
               className="workshop-figure"
@@ -72,9 +73,6 @@ export default function Home() {
               unoptimized
               alt="Smart environments, wearables, extended reality, and robotics connected through transferable insights."
             />
-            <p>
-              This workshop will bring together researchers and practitioners across HCI, AI, wearables, robotics, XR, smart environments, accessibility, and ability augmentation to share domain expertise and transferable insights. Through panel discussions, interactive demos, and mixed-group design activities, participants will identify design principles, technical challenges, and future directions for CPS that support and augment human abilities in real-world settings.
-            </p>
           </div>
         </section>
 
