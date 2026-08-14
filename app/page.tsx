@@ -36,12 +36,15 @@ export default function Home() {
           <p className="badge">UIST 2026 Workshop | Detroit, MI USA</p>
           <h1>
             <span className="title-line">Cyber-Physical Systems</span>
-            <span className="title-line title-accent">for Accessibility and Ability Augmentation</span>
+            <span className="title-line title-accent">for Accessibility and Ability Augmentation:</span>
+            <span className="title-line title-sub">Bridging Diverse Communities</span>
           </h1>
           <p className="date">November 2, 2026</p>
           <p className="location">Location: <strong>Renaissance Center</strong></p>
           <div className="cta-row">
-            <span className="btn" aria-disabled="true">Register (Google Form)</span>
+            <a className="btn" href="https://forms.gle/sQSKbdvGa99BGCcB6" target="_blank" rel="noreferrer">
+              Register (Google Form)
+            </a>
             <a className="btn" href="https://uist.acm.org/2026/workshops/" target="_blank" rel="noreferrer">
               UIST 2026 Main Site
             </a>

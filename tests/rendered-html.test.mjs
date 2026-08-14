@@ -21,20 +21,22 @@ test("server-renders the complete workshop page", async () => {
 
   const html = await response.text();
   assert.match(html, /class="title-line">Cyber-Physical Systems<\/span>/);
-  assert.match(html, /class="title-line title-accent">for Accessibility and Ability Augmentation<\/span>/);
+  assert.match(html, /class="title-line title-accent">for Accessibility and Ability Augmentation:<\/span>/);
+  assert.match(html, /class="title-line title-sub">Bridging Diverse Communities<\/span>/);
   assert.match(html, /November 2, 2026/);
   assert.match(html, /Location: <strong>Renaissance Center<\/strong>/);
   assert.doesNotMatch(html, /Detroit Marriott/);
-  assert.match(html, /Register \(Google Form\)/);
+  assert.match(html, /href="https:\/\/forms\.gle\/sQSKbdvGa99BGCcB6"[^>]*>\s*Register \(Google Form\)\s*<\/a>/);
+  assert.doesNotMatch(html, /aria-disabled="true"/);
   assert.match(html, /Mixed-Group Discussion/);
   assert.doesNotMatch(html, /Mixed-Group Design &amp; Discussion/);
   assert.match(html, /Pattie Maes/);
   assert.match(html, /xsc14thu@gmail\.com/);
   assert.match(html, /\/figure1\.png/);
   assert.ok(
-    html.indexOf("alt=\"Smart environments") > html.indexOf("Motivation:") &&
-      html.indexOf("alt=\"Smart environments") < html.indexOf("Challenge:"),
-    "workshop figure should appear between Motivation and Challenge",
+    html.indexOf("alt=\"Smart environments") > html.indexOf("The convergence of wearables") &&
+      html.indexOf("alt=\"Smart environments") < html.indexOf("However, realizing this potential"),
+    "workshop figure should appear between the motivation and challenge paragraphs",
   );
   assert.match(html, /\/organizers\/riku\.jpg/);
   assert.match(html, /\/organizers\/shuchang\.png/);
@@ -42,10 +44,8 @@ test("server-renders the complete workshop page", async () => {
   assert.doesNotMatch(html, /\/_next\/image\?/);
   assert.match(html, /\* equal contributions/);
   assert.match(html, /HKUST, MIT Media Lab/);
-  assert.match(html, /<strong>Motivation:<\/strong>/);
-  assert.match(html, /<strong>Challenge:<\/strong>/);
-  assert.match(html, /<strong>Goal:<\/strong>/);
-  assert.match(html, /<strong>Activities and Outcome:<\/strong>/);
+  assert.match(html, /href="https:\/\/accessible-cps\.github\.io"[^>]*>Accessible Cyber-Physical Activities<\/a>/);
+  assert.doesNotMatch(html, /\[https:\/\/accessible-cps\.github\.io\]/);
   assert.match(html, /class="announcement-section" aria-labelledby="keynote-speakers-title"/);
   assert.match(html, /id="keynote-speakers-title">Keynote Speakers<\/h2><p>To be Announced<\/p>/);
   assert.match(html, /id="panelists-title">Panelists<\/h2><p>To be Announced<\/p>/);
@@ -68,9 +68,12 @@ test("includes accessible section structure and image text", async () => {
   assert.match(css, /prefers-reduced-motion/);
   assert.match(css, /--accent:\s*#0a8c9c/);
   assert.match(css, /\.title-line\s*\{[^}]*white-space:\s*nowrap/s);
-  assert.match(css, /font-size:\s*clamp\(32px,\s*5\.2vw,\s*58px\)/);
-  assert.match(css, /h1\s*\{[^}]*font-weight:\s*800/s);
-  assert.match(css, /h1\s*\{[^}]*margin:\s*clamp\(32px,\s*4vw,\s*48px\) auto clamp\(26px,\s*3\.5vw,\s*42px\)/s);
+  assert.match(css, /font-size:\s*clamp\(29px,\s*4\.1vw,\s*46px\)/);
+  assert.match(css, /h1\s*\{[^}]*font-weight:\s*600/s);
+  assert.match(css, /h1\s*\{[^}]*margin:\s*clamp\(30px,\s*3\.6vw,\s*44px\) auto clamp\(24px,\s*3\.2vw,\s*36px\)/s);
+  assert.match(css, /h1,\s*h2,\s*h3\s*\{[^}]*font-family:\s*var\(--font-serif\)/s);
+  assert.match(css, /\.about-copy p\s*\{[^}]*max-width:\s*68ch/s);
+  assert.match(css, /\.about-copy p\s*\{[^}]*line-height:\s*1\.78/s);
   assert.match(css, /@media \(max-width: 760px\)[\s\S]*\.title-line\s*\{\s*white-space:\s*normal;/);
   assert.match(css, /width:\s*min\(100%,\s*408px\)/);
   assert.match(css, /\.about-copy\s*\{[^}]*padding:\s*clamp\(36px,\s*6vw,\s*72px\)/s);

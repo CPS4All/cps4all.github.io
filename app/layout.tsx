@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -11,6 +11,12 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
+});
+
+const sourceSerif = Source_Serif_4({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -25,7 +31,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description: "A UIST 2026 workshop exploring cyber-physical systems that support accessibility and augment human abilities in daily life.",
     icons: { icon: "/figure1.png", shortcut: "/figure1.png" },
     openGraph: {
-      title: "Cyber-Physical Systems for Accessibility and Ability Augmentation",
+      title: "Cyber-Physical Systems for Accessibility and Ability Augmentation: Bridging Diverse Communities",
       description: "UIST 2026 Workshop · Detroit · November 2",
       type: "website",
       url: baseUrl,
@@ -33,7 +39,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Cyber-Physical Systems for Accessibility and Ability Augmentation",
+      title: "Cyber-Physical Systems for Accessibility and Ability Augmentation: Bridging Diverse Communities",
       description: "UIST 2026 Workshop · Detroit · November 2",
       images: [`${baseUrl}/og.png`],
     },
@@ -43,7 +49,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${sourceSerif.variable}`}>{children}</body>
     </html>
   );
 }
