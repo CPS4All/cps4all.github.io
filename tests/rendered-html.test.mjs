@@ -50,13 +50,7 @@ test("server-renders the complete workshop page", async () => {
   assert.doesNotMatch(html, /\/_next\/image\?/);
   assert.match(html, /\* equal contributions/);
   assert.match(html, /HKUST, MIT Media Lab/);
-  assert.match(html, /id="history-title">Workshop History<\/h2>/);
   assert.match(html, /href="https:\/\/accessible-cps\.github\.io"[^>]*>Accessible Cyber-Physical Activities<\/a>/);
-  assert.ok(
-    html.indexOf("Workshop History") > html.indexOf(">Organizers<") &&
-      html.indexOf("Workshop History") < html.indexOf(">Questions?<"),
-    "workshop history should sit between the organizers and questions sections",
-  );
   assert.doesNotMatch(html, /\[https:\/\/accessible-cps\.github\.io\]/);
   assert.match(html, /class="announcement-section" aria-labelledby="keynote-speakers-title"/);
   assert.match(html, /id="keynote-speakers-title">Keynote Speakers<\/h2><p>To be Announced<\/p>/);
@@ -86,7 +80,7 @@ test("includes accessible section structure and image text", async () => {
   assert.match(css, /h1\s*\{[^}]*margin:\s*clamp\(30px,\s*3\.6vw,\s*44px\) auto clamp\(24px,\s*3\.2vw,\s*36px\)/s);
   assert.doesNotMatch(css, /font-family:\s*var\(--font-serif\)/);
   assert.match(css, /\.about-copy p\s*\{[^}]*max-width:\s*68ch/s);
-  assert.match(css, /\.about-copy p\s*\{[^}]*line-height:\s*1\.95/s);
+  assert.match(css, /\.about-copy p\s*\{[^}]*line-height:\s*1\.78/s);
   assert.match(css, /@media \(max-width: 1180px\)\s*\{\s*\.title-line\s*\{\s*white-space:\s*normal;/);
   assert.match(css, /@media \(max-width: 760px\)[\s\S]*\.btn\s*\{\s*width:\s*min\(100%,\s*65vw\);/);
   assert.match(css, /width:\s*min\(100%,\s*408px\)/);

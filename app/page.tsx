@@ -73,12 +73,6 @@ export default function Home() {
             <p>
               This workshop brings together researchers and practitioners from HCI, AI, wearables, robotics, XR, smart environments, accessibility, and human ability augmentation to foster collaboration and innovation. Through panels, interactive demonstrations, and mixed-group design activities, participants will identify emerging design principles, surface key technical and human-centered challenges, and chart future directions for CPS that support and augment human abilities in everyday life.
             </p>
-            <p>
-              This workshop builds on the UIST 2025 {" "}
-              <a href="https://accessible-cps.github.io" target="_blank" rel="noreferrer">
-                Accessible Cyber-Physical Activities
-              </a>{" "} workshop.
-            </p>
           </div>
         </section>
 
@@ -139,6 +133,18 @@ export default function Home() {
           </div>
         </section>
 
+        <section aria-labelledby="history-title">
+          <h2 id="history-title">Workshop History</h2>
+          <div className="content-card">
+            <p>
+              This workshop builds on the UIST 2025 {" "}
+              <a href="https://accessible-cps.github.io" target="_blank" rel="noreferrer">
+                Accessible Cyber-Physical Activities
+              </a>{" "} workshop.
+            </p>
+          </div>
+        </section>
+
         <section aria-labelledby="questions-title">
           <h2 id="questions-title">Questions?</h2>
           <div className="content-card">
@@ -152,7 +158,7 @@ export default function Home() {
 
       <footer>
         <div className="wrap">
-          <p>@ 2026 UIST workshop.</p>
+          <p>@ 2026 UIST workshop</p>
         </div>
       </footer>
     </>

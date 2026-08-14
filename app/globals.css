@@ -24,7 +24,7 @@ body {
   color: var(--muted);
   background: var(--background);
   font-family: var(--font-sans), Arial, sans-serif;
-  line-height: 1.8;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -85,7 +85,7 @@ h1 {
   font-weight: 400;
 }
 
-.location { margin: 0; font-size: 16px; }
+.location { margin: 0; font-size: clamp(19px, 3vw, 24px); }
 
 .cta-row {
   display: flex;
@@ -145,11 +145,11 @@ section > h2 {
   margin-inline: auto;
   color: #344f64;
   font-size: 16px;
-  line-height: 1.95;
+  line-height: 1.78;
   letter-spacing: 0.003em;
 }
 
-.about-copy p + p { margin-top: 24px; }
+.about-copy p + p { margin-top: 20px; }
 .about-copy strong { color: var(--text); }
 
 .workshop-figure {
