@@ -436,8 +436,11 @@ export default function Home() {
               <h2 id="about-title">Workshop Theme: Bridging Diverse Communities</h2>
               <div className="prose">
                 <p>
-                  The powerful convergence of wearables, robotics, extended reality, and smart environments is expanding the design space for cyberphysical systems (CPS) that support and augment human abilities in daily life. 
-                  By sensing real-world contexts, modeling user needs, and delivering situated assistance, these systems create new opportunities to enhance human capabilities such as perception, memory, learning, and mobility. They also address long-standing accessibility barriers across independent living, navigation, and social participation. This workshop brings together diverse communities to exchange transferable insights and shape a shared research agenda. Relevant fields include, but are not limited to:
+                  The convergence of wearables, robotics, extended reality, and smart environments is expanding the design space for cyber-physical systems (CPS) that support and augment human abilities in everyday life. By sensing real-world contexts, modeling users’ needs, and delivering situated assistance, these systems can enhance capabilities such as perception, memory, learning, and mobility. 
+                  They also offer new ways to address long-standing accessibility barriers in areas such as independent living, navigation, and social participation. 
+                  This workshop brings together researchers and practitioners from diverse communities working on CPS for accessibility and human ability augmentation. 
+                  The goal is to exchange transferable insights, identify shared challenges and opportunities, and shape a common research agenda. 
+                  Relevant fields include, but are not limited to:
                 </p>
 
                 <div className="chip-row">
