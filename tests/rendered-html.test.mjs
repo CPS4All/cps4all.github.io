@@ -48,6 +48,9 @@ test("server-renders the complete workshop page", async () => {
   assert.match(html, /\/organizers\/pattie\.png/);
   assert.doesNotMatch(html, /\/_next\/image\?/);
   assert.match(html, /\* equal contributions/);
+  assert.match(html, /href="https:\/\/shuchangxu\.github\.io\/"[^>]*>Shuchang Xu\*<\/a>/);
+  assert.match(html, /href="https:\/\/www\.media\.mit\.edu\/people\/pattie\/overview\/"[^>]*>Pattie Maes<\/a>/);
+  assert.equal((html.match(/class="person/g) ?? []).length, (html.match(/<h3><a href="http/g) ?? []).length);
   assert.match(html, /HKUST, MIT Media Lab/);
   assert.match(html, /href="https:\/\/accessible-cps\.github\.io"[^>]*>Accessible Cyber-Physical Activities<\/a>/);
   assert.doesNotMatch(html, /\[https:\/\/accessible-cps\.github\.io\]/);
@@ -88,5 +91,5 @@ test("includes accessible section structure and image text", async () => {
   assert.match(css, /\.about-copy\s*\{[^}]*padding:\s*clamp\(36px,\s*6vw,\s*72px\)/s);
   assert.match(css, /\.about-copy\s*\{[^}]*border:\s*2px solid #b6dfe3/s);
   assert.doesNotMatch(css, /\.announcement-section\s*\+\s*\.announcement-section[^}]*border/);
-  assert.doesNotMatch(css, /gradient\(/);
+  assert.match(css, /body\s*\{[^}]*background-image:\s*\n?\s*radial-gradient\([^;]*linear-gradient\(/s);
 });

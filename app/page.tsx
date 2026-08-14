@@ -12,20 +12,20 @@ const schedule = [
 ];
 
 const organizers = [
-  { name: "Shuchang Xu*", affiliation: "HKUST, MIT Media Lab", image: "/organizers/shuchang.png" },
-  { name: "Riku Arakawa*", affiliation: "Carnegie Mellon University", image: "/organizers/riku.jpg" },
-  { name: "Mina Huh*", affiliation: "University of California, Berkeley", image: "/organizers/mina.png" },
-  { name: "Nandi Zhang*", affiliation: "University of Rochester", image: "/organizers/nandi.jpeg" },
-  { name: "Tianyu Zhang*", affiliation: "University of Rochester", image: "/organizers/tianyu.png" },
-  { name: "Wazeer Zulfikar*", affiliation: "MIT Media Lab", image: "/organizers/wazeer.png" },
-  { name: "Ruei-Che Chang*", affiliation: "University of Michigan", image: "/organizers/rueiche.png" },
-  { name: "Yotam Sechayk*", affiliation: "University of Tokyo", image: "/organizers/yotam.png" },
-  { name: "Huamin Qu", affiliation: "HKUST", image: "/organizers/huamin.png" },
-  { name: "Amy Pavel", affiliation: "University of California, Berkeley", image: "/organizers/amy.png" },
-  { name: "Franklin Mingzhe Li", affiliation: "UNC-Chapel Hill", image: "/organizers/franklin.png" },
-  { name: "Yukang Yan", affiliation: "University of Rochester", image: "/organizers/yukang.png" },
-  { name: "Brian A. Smith", affiliation: "Columbia University", image: "/organizers/brian.png" },
-  { name: "Pattie Maes", affiliation: "MIT Media Lab", image: "/organizers/pattie.png" },
+  { name: "Shuchang Xu*", affiliation: "HKUST, MIT Media Lab", image: "/organizers/shuchang.png", url: "https://shuchangxu.github.io/" },
+  { name: "Riku Arakawa*", affiliation: "Carnegie Mellon University", image: "/organizers/riku.jpg", url: "https://rikky0611.github.io/" },
+  { name: "Mina Huh*", affiliation: "University of California, Berkeley", image: "/organizers/mina.png", url: "https://minahuh.com/" },
+  { name: "Nandi Zhang*", affiliation: "University of Rochester", image: "/organizers/nandi.jpeg", url: "https://nandi-zhang.github.io/" },
+  { name: "Tianyu Zhang*", affiliation: "University of Rochester", image: "/organizers/tianyu.png", url: "https://tianyuzhang2001.com/" },
+  { name: "Wazeer Zulfikar*", affiliation: "MIT Media Lab", image: "/organizers/wazeer.png", url: "https://www.media.mit.edu/people/wazeer/overview/" },
+  { name: "Ruei-Che Chang*", affiliation: "University of Michigan", image: "/organizers/rueiche.png", url: "https://rueiche.com/" },
+  { name: "Yotam Sechayk*", affiliation: "University of Tokyo", image: "/organizers/yotam.png", url: "https://tomfluff.github.io/" },
+  { name: "Huamin Qu", affiliation: "HKUST", image: "/organizers/huamin.png", url: "http://huamin.org/" },
+  { name: "Amy Pavel", affiliation: "University of California, Berkeley", image: "/organizers/amy.png", url: "https://amypavel.com/" },
+  { name: "Franklin Mingzhe Li", affiliation: "UNC-Chapel Hill", image: "/organizers/franklin.png", url: "https://franklin-li.com/" },
+  { name: "Yukang Yan", affiliation: "University of Rochester", image: "/organizers/yukang.png", url: "https://rochester-bear-lab.github.io/yukang" },
+  { name: "Brian A. Smith", affiliation: "Columbia University", image: "/organizers/brian.png", url: "https://ceal.cs.columbia.edu/people/" },
+  { name: "Pattie Maes", affiliation: "MIT Media Lab", image: "/organizers/pattie.png", url: "https://www.media.mit.edu/people/pattie/overview/" },
 ];
 
 export default function Home() {
@@ -124,7 +124,11 @@ export default function Home() {
                   <Image src={organizer.image} alt="" width="320" height="320" unoptimized />
                 )}
                 <div>
-                  <h3>{organizer.name}</h3>
+                  <h3>
+                    <a href={organizer.url} target="_blank" rel="noreferrer">
+                      {organizer.name}
+                    </a>
+                  </h3>
                   <p>{organizer.affiliation}</p>
                 </div>
               </article>
