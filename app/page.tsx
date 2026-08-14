@@ -404,7 +404,7 @@ export default function Home() {
               </span>
               <span>
                 <Icon name="pin" />
-                Detroit, USA
+                UIST 2026
               </span>
             </div>
 
