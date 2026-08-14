@@ -141,9 +141,8 @@ export default function Home() {
             </p>
           </div>
         </section>
-      </main>
 
-       <section aria-labelledby="history-title">
+        <section aria-labelledby="history-title">
           <h2 id="history-title">Workshop History</h2>
           <div className="content-card">
             <p>
@@ -154,6 +153,7 @@ export default function Home() {
             </p>
           </div>
         </section>
+      </main>
 
       <footer>
         <div className="wrap">
