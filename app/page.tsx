@@ -33,14 +33,14 @@ export default function Home() {
     <>
       <header className="hero">
         <div className="wrap">
-          <p className="badge">UIST 2026 Workshop | Detroit, MI USA</p>
+          <p className="badge">UIST 2026 Workshop</p>
           <h1>
             <span className="title-line">Cyber-Physical Systems</span>
             <span className="title-line title-accent">for Accessibility and Ability Augmentation:</span>
             <span className="title-line title-sub">Bridging Diverse Communities</span>
           </h1>
           <p className="date">November 2, 2026</p>
-          <p className="location">Location: <strong>Renaissance Center</strong></p>
+          <p className="location">Location: Renaissance Center</p>
           <div className="cta-row">
             <a className="btn" href="https://forms.gle/sQSKbdvGa99BGCcB6" target="_blank" rel="noreferrer">
               Register (Google Form)
@@ -62,9 +62,6 @@ export default function Home() {
             <p>
               The powerful convergence of wearables, robotics, extended reality, and smart environments is expanding the design space for cyber-physical systems (CPS) that support and augment human abilities in daily life. By sensing real-world contexts, modeling user needs, and providing situated assistance, these systems can improve accessibility for people with disabilities while enhancing broader human abilities such as perception, memory, learning, and mobility.
             </p>
-            <p>
-              This workshop brings together interdisciplinary researchers and practitioners from HCI, AI, wearables, robotics, XR, smart environments, accessibility, and human ability augmentation. Through panels, interactive demonstrations, and mixed-group design activities, participants will identify emerging design principles, surface key technical and human-centered challenges, and chart future directions for CPS that support and augment human abilities in real-world settings.
-            </p>
             <Image
               className="workshop-figure"
               src="/figure1.png"
@@ -73,6 +70,9 @@ export default function Home() {
               unoptimized
               alt="Smart environments, wearables, extended reality, and robotics connected through transferable insights."
             />
+            <p>
+              This workshop brings together researchers and practitioners from HCI, AI, wearables, robotics, XR, smart environments, accessibility, and human ability augmentation to foster collaboration and innovation. Through panels, interactive demonstrations, and mixed-group design activities, participants will identify emerging design principles, surface key technical and human-centered challenges, and chart future directions for CPS that support and augment human abilities in everyday life.
+            </p>
           </div>
         </section>
 
@@ -137,11 +137,10 @@ export default function Home() {
           <h2 id="history-title">Workshop History</h2>
           <div className="content-card">
             <p>
-              This workshop builds on the UIST 2025 workshop,{" "}
+              This workshop builds on the UIST 2025 {" "}
               <a href="https://accessible-cps.github.io" target="_blank" rel="noreferrer">
                 Accessible Cyber-Physical Activities
-              </a>
-              , and broadens the conversation from accessibility to human ability augmentation across technologies, applications, and research communities.
+              </a>{" "} workshop.
             </p>
           </div>
         </section>
@@ -150,7 +149,7 @@ export default function Home() {
           <h2 id="questions-title">Questions?</h2>
           <div className="content-card">
             <p>
-              If you have any questions about the workshop or registration, or have any accessibility needs, please email:{" "}
+              If you have any questions about the workshop or registration, or have any accessibility needs, please {" "}
               <a href="mailto:xsc14thu@gmail.com">Contact Us</a>.
             </p>
           </div>

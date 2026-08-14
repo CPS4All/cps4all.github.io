@@ -24,7 +24,7 @@ test("server-renders the complete workshop page", async () => {
   assert.match(html, /class="title-line title-accent">for Accessibility and Ability Augmentation:<\/span>/);
   assert.match(html, /class="title-line title-sub">Bridging Diverse Communities<\/span>/);
   assert.match(html, /November 2, 2026/);
-  assert.match(html, /Location: <strong>Renaissance Center<\/strong>/);
+  assert.match(html, /class="location">Location: Renaissance Center<\/p>/);
   assert.doesNotMatch(html, /Detroit Marriott/);
   assert.match(html, /href="https:\/\/forms\.gle\/sQSKbdvGa99BGCcB6"[^>]*>\s*Register \(Google Form\)\s*<\/a>/);
   assert.doesNotMatch(html, /aria-disabled="true"/);
@@ -40,9 +40,9 @@ test("server-renders the complete workshop page", async () => {
   assert.match(html, /xsc14thu@gmail\.com/);
   assert.match(html, /\/figure1\.png/);
   assert.ok(
-    html.indexOf("alt=\"Smart environments") > html.indexOf("The convergence of wearables") &&
-      html.indexOf("alt=\"Smart environments") < html.indexOf("This workshop will bring together"),
-    "workshop figure should appear between the motivation and workshop paragraphs",
+    html.indexOf("alt=\"Smart environments") > html.indexOf("About the Workshop") &&
+      html.indexOf("alt=\"Smart environments") < html.indexOf("Schedule</h2>"),
+    "workshop figure should sit inside the about section",
   );
   assert.match(html, /\/organizers\/riku\.jpg/);
   assert.match(html, /\/organizers\/shuchang\.png/);
@@ -86,7 +86,7 @@ test("includes accessible section structure and image text", async () => {
   assert.match(css, /h1\s*\{[^}]*margin:\s*clamp\(30px,\s*3\.6vw,\s*44px\) auto clamp\(24px,\s*3\.2vw,\s*36px\)/s);
   assert.doesNotMatch(css, /font-family:\s*var\(--font-serif\)/);
   assert.match(css, /\.about-copy p\s*\{[^}]*max-width:\s*68ch/s);
-  assert.match(css, /\.about-copy p\s*\{[^}]*line-height:\s*1\.78/s);
+  assert.match(css, /\.about-copy p\s*\{[^}]*line-height:\s*1\.95/s);
   assert.match(css, /@media \(max-width: 1180px\)\s*\{\s*\.title-line\s*\{\s*white-space:\s*normal;/);
   assert.match(css, /@media \(max-width: 760px\)[\s\S]*\.btn\s*\{\s*width:\s*min\(100%,\s*65vw\);/);
   assert.match(css, /width:\s*min\(100%,\s*408px\)/);
