@@ -54,7 +54,7 @@ const schedule = [
   },
   {
     time: "9:30 - 10:15",
-    title: "Keynote I - Research Perspective",
+    title: "Keynote I - Research Advances",
     body: "Senior researchers will highlight recent advances in cyber-physical systems (CPS) and human augmentation.",
   },
   {
@@ -438,7 +438,7 @@ export default function Home() {
                   The convergence of wearables, robotics, extended reality, and smart environments is expanding the design space for cyber-physical systems (CPS) that support and augment human abilities in everyday life. By sensing real-world contexts, modeling users’ needs, and delivering situated assistance, these systems can enhance capabilities such as perception, memory, learning, and mobility. 
                   They also offer new ways to address long-standing accessibility barriers in areas such as independent living, navigation, and social participation. 
                 </p>
-                
+
                 <p>
                   This workshop brings together researchers and practitioners from diverse communities working on CPS for accessibility and human ability augmentation. 
                   The goal is to exchange transferable insights, identify shared challenges and opportunities, and shape a common research agenda. 
