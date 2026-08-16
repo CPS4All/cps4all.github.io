@@ -463,7 +463,7 @@ export default function Home() {
                 </p>
 
                 <p>
-                  This workshopbrings together researchers and practitioners from HCI, AI, wearables, robotics, XR, smart environments, accessibility, and ability augmentation to examine shared strategies and challenges for designing accessibility- and ability-centered CPS. 
+                  This workshop brings together researchers and practitioners from HCI, AI, wearables, robotics, XR, smart environments, accessibility, and ability augmentation to examine shared strategies and challenges for designing accessibility- and ability-centered CPS. 
                   Through keynotes, panel discussions, interactive demos, and mixed-group design activities, participants will identify emerging design principles, surface shared challenges, and chart future directions for CPS that support and augment human abilities in everyday life. 
                   The organizing committee will synthesize key workshop outcomes into a public report and maintain a participant communication channel to support continued exchange beyond the event.
                 </p>
