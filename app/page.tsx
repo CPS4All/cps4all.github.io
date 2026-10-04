@@ -45,6 +45,68 @@ const topics = [
   },
 ];
 
+const keynoteSpeakers = [
+  {
+    name: "Jeffrey P. Bigham",
+    title: "Associate Professor at Carnegie Mellon University",
+    url: "https://www.cs.cmu.edu/~jbigham/",
+    image: "/keynotes/bigham.webp",
+    bio: "Jeffrey P. Bigham is an Associate Professor in the Human-Computer Interaction and Language Technologies Institutes in the School of Computer Science at Carnegie Mellon University. He also leads a Human-Centered Machine Intelligence Group at Apple, which works on research and applied projects in Accessibility, AI Fairness, ML Design, Learning Sciences, InfoVis, and Computational Understanding of UIs.",
+  },
+  {
+    name: "Yuhang Zhao",
+    title: "Assistant Professor at University of Wisconsin-Madison",
+    url: "https://www.yuhangz.com",
+    image: "/keynotes/yuhangzhao.webp",
+    bio: "Yuhang Zhao is an Assistant Professor in Computer Sciences at the University of Wisconsin-Madison. Her research interests include Human-Computer Interaction (HCI), accessibility, augmented and virtual reality (AR/VR), and AI-powered interactive systems. She designs and builds embodied intelligence for accessibility: AI-powered XR systems that interpret user context and behavior, and adaptively enhance human abilities.",
+  },
+  {
+    name: "Dhruv Jain",
+    title: "Assistant Professor at University of Michigan",
+    url: "https://dhruv-jain.com",
+    image: "/keynotes/jain.webp",
+    bio: "Dhruv Jain is an Assistant Professor of Computer Science and Engineering at the University of Michigan, also affiliated with the School of Information and Michigan Medicine. He builds and studies human-AI systems for accessibility across three research pillars: (1) AI for Sound Accessibility; (2) Accessible AI for the Future of Work; and (3) Reliability in Real-World Accessible AI.",
+  },
+];
+
+const panelists = [
+  {
+    name: "Jaylin Herskovitz",
+    title: "Assistant Professor, Tufts University",
+    url: "https://jayl.in",
+    image: "/panelists/jaylin.webp",
+    focus: "AI-based assistive technologies, DIY technology, and AR/VR",
+  },
+  {
+    name: "Yaxin Hu",
+    title: "Assistant Professor, William & Mary",
+    url: "https://edayaxin.github.io",
+    image: "/panelists/yaxinhu.webp",
+    focus: "Human robot interaction, embodied AI, and accessibility",
+  },
+  {
+    name: "Valdemar Danry",
+    title: "PhD Candidate, MIT Media Lab",
+    url: "https://valdemardanry.com",
+    image: "/panelists/vald.webp",
+    focus: "Cognitive Augmentation, AI, and Brain Computer Interfaces",
+  },
+  {
+    name: "Xiaofu Jin",
+    title: "Humboldt Research Fellow, University of Stuttgart",
+    url: "https://www.collaborative-ai.org/people/jin/",
+    image: "/panelists/xiaofu.webp",
+    focus: "Artificial Intelligence and Cognitive Science",
+  },
+  {
+    name: "Aziz Zeidieh",
+    title: "PhD Candidate, University of Illinois Urbana-Champaign",
+    url: "https://zeidieh.com",
+    image: "/panelists/aziz.webp",
+    focus: "navigation technologies for blind and low-vision explorers",
+  },
+];
+
 const schedule = [
   {
     time: "9:00 - 9:30",
@@ -53,12 +115,12 @@ const schedule = [
   },
   {
     time: "9:30 - 10:15",
-    title: "Keynote I - Research Advances",
+    title: "Keynote - Jeffrey P. Bigham",
     // body: "Senior researchers will highlight recent advances in cyber-physical systems (CPS) and human augmentation.",
   },
   {
     time: "10:15 - 11:00",
-    title: "Keynote II - Industry Perspective",
+    title: "Keynote - Yuhang Zhao",
     // body: "Industry perspectives on the challenges and opportunities of designing and deploying CPS in real-world settings.",
   },
   {
@@ -78,7 +140,7 @@ const schedule = [
   },
   {
     time: "14:45 - 15:30",
-    title: "Keynote III - Community Perspective",
+    title: "Keynote - Dhruv Jain",
     // body: "Community representatives will share lived experiences and perspectives on accessibility and ability augmentation technologies.",
   },
   {
@@ -195,6 +257,45 @@ const callAreas = [
   "Human Augmentation",
   "Privacy & Ethics",
   "Real-World Evaluation",
+];
+
+const attendees = [
+  {
+    name: "Ruijie Zheng",
+    institution: "University of Michigan Ann Arbor",
+    url: "https://ruijiezh67.github.io/",
+    intro: "My research sits at the intersection of human-AI interaction and AI for social good. I am broadly interested in how intelligent systems can be designed to preserve human agency and critical thinking—particularly in contexts where AI outputs carry uncertainty or where users are underrepresented in default interface design. This includes questions of how to surface model confidence in ways that build rather than undermine user trust, how adaptive AI systems can serve diverse user needs without requiring explicit configuration, and how the internal dynamics of large language models (such as reasoning depth and hidden-state convergence) relate to the transparency and reliability that end-users experience.",
+  },
+  {
+    name: "Ruijia Chen",
+    institution: "University of Wisconsin-Madison",
+    url: "https://chenruijia120.github.io/",
+    intro: "My research interests lie in augmented reality and accessibility. I design and develop AR technology to automatically recognize surrounding visual information that cannot be easily perceived by people with low vision, and generate suitable multi-modal feedback to enhance their perceptual abilities in various daily tasks.",
+  },
+  {
+    name: "Erwin Wu",
+    institution: "Institute of Science Tokyo",
+    url: "https://erwinwu.com/",
+    intro: "I work on Assistance Systems for Skill Acquisition.",
+  },
+  {
+    name: "Yuta Taguchi",
+    institution: "Waseda University",
+    url: "",
+    intro: "I work on accessibility technology for people with visual impairments in outdoor sports. My project SnowEcho is a blind skiing assistance system that conveys obstacles and course boundaries through spatial audio, allowing skiers to perceive traversable free space and choose their own line rather than following a prescribed route.",
+  },
+  {
+    name: "Yuanyang (YY) Teng",
+    institution: "Northwestern University",
+    url: "https://www.yyteng.com/",
+    intro: "I challenge outcome-driven \"access\" and develop a process-oriented frame: Developmental Flourishing. It reframes assistive technologies not as instruments for reaching task outcomes, but as a means through which blind and low-vision individuals can explore, create, and construct meaning from their experiences. I share an analysis of sensing and AI systems, discussing the extent to which they align with and augment blind people’s perceptual and cognitive processes, while highlighting persistent challenges and future directions.",
+  },
+  {
+    name: "Ujjaini Das",
+    institution: "The University of Texas at Austin",
+    url: "https://ujjainidas.github.io/",
+    intro: "I am broadly interested in making physical experiences accessible. My past work has focused on making dance instruction accessible for blind and low-vision learners using multimodal cues. I have also collaborated on Vid2Coach, a wearable task assistant for BLV individuals, and on designing accessible communication for household robots. This workshop is strongly aligned with my interest in physical systems for accessibility, and I am excited to connect with other researchers about these systems, both within and outside accessibility contexts.",
+  },
 ];
 
 const organizers = [
@@ -531,7 +632,104 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="band band-paper" id="organizers" aria-labelledby="organizers-title">
+
+        <section className="band band-paper" id="keynotes" aria-labelledby="keynotes-title">
+          <div className="shell">
+            <div className="band-head">
+              <h2 id="keynotes-title">Keynote Speakers</h2>
+            </div>
+
+            <div className="speaker-grid">
+              {keynoteSpeakers.map((speaker) => (
+                <article className="speaker-card keynote-card" key={speaker.name}>
+                  <img
+                    className="speaker-image"
+                    src={speaker.image}
+                    alt={`Headshot of ${speaker.name}`}
+                    loading="lazy"
+                  />
+                  <div className="speaker-body">
+                    <h3>
+                      <a href={speaker.url} target="_blank" rel="noreferrer">
+                        {speaker.name}
+                      </a>
+                    </h3>
+                    <p className="speaker-title">{speaker.title}</p>
+                    <p className="speaker-bio">{speaker.bio}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="band band-white" id="panelists" aria-labelledby="panelists-title">
+          <div className="shell">
+            <div className="band-head">
+              <h2 id="panelists-title">Panelists</h2>
+            </div>
+
+            <div className="panel-grid">
+              {panelists.map((panelist) => (
+                <article className="panel-card" key={panelist.name}>
+                  <img
+                    className="panel-image"
+                    src={panelist.image}
+                    alt={`Headshot of ${panelist.name}`}
+                    loading="lazy"
+                  />
+                  <div className="panel-body">
+                    <h3>
+                      <a href={panelist.url} target="_blank" rel="noreferrer">
+                        {panelist.name}
+                      </a>
+                    </h3>
+                    <p className="panel-title">{panelist.title}</p>
+                    <p className="panel-focus">{panelist.focus}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="band band-paper" id="attendees" aria-labelledby="attendees-title">
+          <div className="shell">
+            <div className="band-head">
+              <h2 id="attendees-title">Attendees</h2>
+            </div>
+            <p className="attendee-note">
+              The attendees below have kindly consented to sharing a brief introduction. We hope these introductions help bridge diverse communities and foster meaningful connections.
+            </p>
+
+            <div className="attendee-grid">
+              {attendees.map((person) => (
+                <details className="attendee-card" key={person.name}>
+                  <summary className="attendee-summary">
+                    <div className="attendee-headline">
+                      <span className="attendee-name">
+                        {person.url ? (
+                          <a href={person.url} target="_blank" rel="noreferrer">
+                            {person.name}
+                          </a>
+                        ) : (
+                          person.name
+                        )}
+                      </span>
+                      <span className="attendee-institution">{person.institution}</span>
+                    </div>
+                    <span className="attendee-toggle" aria-hidden="true" />
+                  </summary>
+                  <div className="attendee-body">
+                    <p className="attendee-intro">{person.intro}</p>
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="band band-white" id="organizers" aria-labelledby="organizers-title">
           <div className="shell">
             <div className="band-head">
               <h2 id="organizers-title">
