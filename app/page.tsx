@@ -693,41 +693,7 @@ export default function Home() {
           </div>
         </section>
 
-        
-
-        <section className="band band-paper" id="organizers" aria-labelledby="organizers-title">
-          <div className="shell">
-            <div className="band-head">
-              <h2 id="organizers-title">
-                Organizing Committee
-              </h2>
-              <p className="people-note">* equal contributions</p>
-            </div>
-
-            <div className="people-grid">
-              {organizers.map((person) => (
-                <a
-                  className="person"
-                  key={person.name}
-                  href={person.url}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Image src={person.image} alt={`Portrait of ${person.name}`} width={264} height={264} unoptimized />
-                  <div className="person-id">
-                    <h3>
-                      {person.name}
-                      {person.equal ? <span className="person-star">*</span> : null}
-                    </h3>
-                    <p>{person.affiliation}</p>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="band band-white" id="attendees" aria-labelledby="attendees-title">
+        <section className="band band-paper" id="attendees" aria-labelledby="attendees-title">
           <div className="shell">
             <div className="band-head">
               <h2 id="attendees-title">Attendees</h2>
@@ -763,6 +729,40 @@ export default function Home() {
           </div>
         </section>
 
+
+        <section className="band band-white" id="organizers" aria-labelledby="organizers-title">
+          <div className="shell">
+            <div className="band-head">
+              <h2 id="organizers-title">
+                Organizing Committee
+              </h2>
+              <p className="people-note">* equal contributions</p>
+            </div>
+
+            <div className="people-grid">
+              {organizers.map((person) => (
+                <a
+                  className="person"
+                  key={person.name}
+                  href={person.url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image src={person.image} alt={`Portrait of ${person.name}`} width={264} height={264} unoptimized />
+                  <div className="person-id">
+                    <h3>
+                      {person.name}
+                      {person.equal ? <span className="person-star">*</span> : null}
+                    </h3>
+                    <p>{person.affiliation}</p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        
         {/* <section className="band band-white" id="outcomes" aria-labelledby="outcomes-title">
           <div className="shell">
             <div className="band-head">
