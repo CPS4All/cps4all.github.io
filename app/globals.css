@@ -952,7 +952,7 @@ img {
 }
 
 .panel-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, calc((100% - 1rem) / 2)), 1fr));
 }
 
 .speaker-card,
@@ -1303,6 +1303,10 @@ img {
 @media (max-width: 680px) {
   body {
     font-size: 16px;
+  }
+
+  .panel-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .brand-mark {
