@@ -763,7 +763,7 @@ export default function Home() {
               ))}
             </div>
 
-            <p className="attendee-note">10 more attendees (chose not to disclose their information)</p>
+            <p className="attendee-note">13 more attendees (chose not to disclose their information)</p>
           </div>
         </section>
 
