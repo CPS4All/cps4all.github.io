@@ -296,6 +296,42 @@ const attendees = [
     url: "https://ujjainidas.github.io/",
     intro: "I am broadly interested in making physical experiences accessible. My past work has focused on making dance instruction accessible for blind and low-vision learners using multimodal cues. I have also collaborated on Vid2Coach, a wearable task assistant for BLV individuals, and on designing accessible communication for household robots. This workshop is strongly aligned with my interest in physical systems for accessibility, and I am excited to connect with other researchers about these systems, both within and outside accessibility contexts.",
   },
+  {
+    name: "Peya Mowar",
+    institution: "Carnegie Mellon University",
+    url: "https://peyajm29.github.io/",
+    intro: "I am broadly interested in Artificial Intelligence and Human-Computer Interaction, particularly with applications in accessibility for blind users. Recently, I built two AI tools, CodeA11y and iTagPDF, that help automatically produce and preserve accessibility metadata for websites and PDFs, respectively.",
+  },
+  {
+    name: "Max Rädler",
+    institution: "Universität Ulm",
+    url: "https://max-raed.github.io",
+    intro: "Accessibility of interfaces through computational methods.",
+  },
+  {
+    name: "Bhawana Chhaglani",
+    institution: "University of Massachusetts Amherst",
+    url: "https://sites.google.com/view/bhawanachhaglani",
+    intro: "My research lies at the intersection of ubiquitous computing, mobile sensing, human-centered computing, and responsible AI. My work advances privacy-aware sensing systems for health and wellness.",
+  },
+  {
+    name: "Monica",
+    institution: "University of North Carolina at Chapel Hill",
+    url: "https://monicamacaes.netlify.app",
+    intro: "Economics, Consumer Behavior, and Market Psychology.",
+  },
+  {
+    name: "Tanmay Srivastava",
+    institution: "Apple",
+    url: "https://sites.google.com/view/tanmaysrivastava/home",
+    intro: "I am a researcher on the MIND team at Apple. I received my CS Ph.D. student from Stony Brook University, working with Shubham Jain at the intersection of Ubiquitous Sensing and Health Systems in the PiCASSo lab. I have worked on around-the-ear devices. I spent the summer of 2025 with Microsoft Research, Redmond, in the Networking Research Group. My research has been awarded by Stony Brook University and covered by The Economic Times, Outlook, Financial Express, and The Hindu.",
+  },
+  {
+    name: "Helena Huang",
+    institution: "University of Wisconsin-Madison",
+    url: "https://helenaqingh.github.io/",
+    intro: "I study and design AI and AR interfaces to explore how computational tools can become more transparent, malleable, and dynamic, as well as how they relate to the broader environments they inhabit, primarily in the contexts of accessibility, creativity support, and sensemaking. I believe in empowering people to engage with and through technology in more embodied, pluralistic, and liberatory ways.",
+  },
 ];
 
 const organizers = [
@@ -726,6 +762,8 @@ export default function Home() {
                 </details>
               ))}
             </div>
+
+            <p className="attendee-note">10 more attendees (chose not to disclose their information)</p>
           </div>
         </section>
 

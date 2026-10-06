@@ -195,6 +195,17 @@ test("renders participation, outcomes, and workshop lineage", async () => {
   assert.doesNotMatch(page, /\[https:\/\/accessible-cps\.github\.io\]/);
 });
 
+test("renders the newly added attendee bios and disclosure note", async () => {
+  const page = await html();
+
+  assert.match(page, /Peya Mowar/);
+  assert.match(page, /Max Rädler/);
+  assert.match(page, /Helena Huang/);
+  assert.match(page, /10 more attendees \(chose not to disclose their information\)/);
+  assert.match(page, /CodeA11y/);
+  assert.match(page, /iTagPDF/);
+});
+
 test("renders all fourteen organizers with links and portraits", async () => {
   const page = await html();
 

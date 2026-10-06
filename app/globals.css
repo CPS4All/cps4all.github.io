@@ -326,6 +326,7 @@ img {
   position: relative;
   overflow: hidden;
   color: var(--white);
+  animation: hero-flow 18s ease-in-out infinite alternate;
   background:
     radial-gradient(900px 460px at 88% -10%, rgba(255, 255, 255, 0.18), transparent 62%),
     radial-gradient(700px 520px at 4% 108%, rgba(255, 255, 255, 0.12), transparent 60%),
@@ -337,6 +338,15 @@ img {
       var(--brand) 74%,
       #7a49d9 100%
     );
+}
+
+@keyframes hero-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 .hero::after {
@@ -512,6 +522,7 @@ img {
 /* The two call-to-action bands run brighter than a plain dark band — the same
    blue-to-purple ramp as the hero, at a shallower angle. */
 .band-cta {
+  animation: cta-flow 20s ease-in-out infinite alternate;
   background:
     radial-gradient(820px 460px at 88% -30%, rgba(255, 255, 255, 0.14), transparent 62%),
     linear-gradient(
@@ -521,6 +532,15 @@ img {
       var(--brand) 64%,
       #7a49d9 100%
     );
+}
+
+@keyframes cta-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 .band-cta .band-head :is(h1, h2) + p {
@@ -1362,6 +1382,11 @@ img {
 
   * {
     transition-duration: 1ms !important;
+  }
+
+  .hero,
+  .band-cta {
+    animation: none;
   }
 
   /* The track stops, so the row becomes a plain horizontal scroller. */
