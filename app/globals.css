@@ -1050,6 +1050,52 @@ img {
   line-height: 1.7;
 }
 
+/* ----------------------------------------------------------- demos */
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.4rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.demo-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--lift);
+  padding: 1rem 1.1rem;
+}
+
+.demo-title {
+  font-size: 1.04rem;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.demo-author {
+  color: var(--brand-deep);
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.demo-affiliation {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+@media (max-width: 760px) {
+  .demo-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ----------------------------------------------------------- attendees */
 
 .attendee-note {

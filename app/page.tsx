@@ -107,7 +107,7 @@ const panelists = [
   },
 ];
 
-const schedule = [
+const schedule: { time: string; title: string; body?: string; isBreak?: boolean }[] = [
   {
     time: "9:00 - 9:30",
     title: "Opening & Icebreaker",
@@ -155,6 +155,8 @@ const schedule = [
   },
 ];
 
+// Used by the commented-out Workshop Outcomes section below.
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const outcomes = [
   {
     id: "01",
@@ -244,21 +246,6 @@ const relevantWork = [
   },
 ];
 
-const callAreas = [
-  "HCI",
-  "AI",
-  "Sensing",
-  "Ubiquitous Computing",
-  "Wearables",
-  "Robotics",
-  "AR/XR",
-  "Smart Environments",
-  "Accessibility",
-  "Human Augmentation",
-  "Privacy & Ethics",
-  "Real-World Evaluation",
-];
-
 const attendees = [
   {
     name: "Ruijie Zheng",
@@ -332,6 +319,59 @@ const attendees = [
     url: "https://helenaqingh.github.io/",
     intro: "I study and design AI and AR interfaces to explore how computational tools can become more transparent, malleable, and dynamic, as well as how they relate to the broader environments they inhabit, primarily in the contexts of accessibility, creativity support, and sensemaking. I believe in empowering people to engage with and through technology in more embodied, pluralistic, and liberatory ways.",
   },
+  {
+    name: "Donghyuk Kim",
+    institution: "Hanyang University",
+    url: "https://kindohyoku.github.io/",
+    intro: "I am interested in how AI can enable new, accessible forms of spatial design and artistic expression. As a practitioner in film and design, I am particularly interested in creative agency, including the ability to shape an experience as well as participate in it.",
+  },
+  {
+    name: "Ellie Seehorn",
+    institution: "University of Michigan",
+    url: "https://seehorne.github.io/",
+    intro: "My research explores how AI-enabled personal devices, such as smartphones and wearables, can provide individualized, situated accessibility support that strengthens disabled people’s agency and autonomy. This directly connects to the workshop’s focus on accessibility-centered cyber-physical systems that sense real-world contexts and support everyday activities. Recently, I have been thinking about these goals in terms of end-user programming (primarily natural language programming, but more recently also Programming by Example and Programming by Demonstration). This has led to a project, ProgramAT, which advances this agenda by enabling blind and low-vision people to create and refine bespoke, camera-based, assistive tools, shifting from systems that simply try to adapt to users toward systems users can actively shape.",
+  },
+  {
+    name: "Yeseo Park",
+    institution: "Kyung Hee University, ITEM Lab",
+    url: "https://equatorial-ping-210.notion.site/yeseopark",
+    intro: "My research lies at the intersection of AI and HCI, exploring how interactive systems can understand people, context, and the physical world to make interaction more natural and accessible. My recent work focuses on context-aware gesture understanding and vision-based tactile sensing, and I am interested in extending this toward wearable and cyber-physical systems that can adaptively guide, constrain, or augment human movement to support and extend human abilities.",
+  },
+  {
+    name: "Rei Hino",
+    institution: "The University of Tokyo",
+    url: "",
+    intro: "I study accessibility technologies for deaf–hearing communication. We co-designed SignWarriors, a Japanese Sign Language learning game where hearing parents of deaf children summon warriors by signing to a camera. This use of camera sensing to support accessibility-oriented learning aligns with the workshop’s themes, which is why I am joining.",
+  },
+  {
+    name: "Alex Noh",
+    institution: "Simon Fraser University",
+    url: "https://ndh707.github.io/",
+    intro: "My research explores how XR and AI can augment human cognition. My recent work investigates diminished reality to help students with ADHD manage visual distractions as well as the diminishment and abstract representation of others in shared spaces to support attention while preserving social awareness. More broadly, I’m interested in making everyday environments more accessible and responsive to different cognitive needs.",
+  },
+  {
+    name: "Jeremy Huang",
+    institution: "University of Michigan",
+    url: "https://zjhuang2.github.io/",
+    intro: "My research focuses on building interactive audio AI systems to help people make sense of and shape their physical and digital environments as their needs evolve.",
+  },
+  {
+    name: "Aryan Kaul",
+    institution: "Columbia University",
+    url: "https://akaul02.github.io/",
+    intro: "My research interests include accessibility-driven design and how we can build interactive systems to support people in their daily lives across a variety of tasks. I'm interested in making complex technologies and information more accessible and exploring how adaptive interfaces can accommodate diverse abilities and preferences, including through multimodal interaction and interdisciplinary approaches, to foster greater independence and agency.",
+  },
+];
+
+const demos = [
+  { title: "SignWarriors: Gamifying Sign Language Practice with Hearing Parents", author: "Rei Hino", affiliation: "The University of Tokyo" },
+  { title: "Beyond Removal: Diminished Reality for Attention Support", author: "Alex Noh", affiliation: "Simon Fraser University" },
+  { title: "Demo of Sona: Personalizable Real-Time Soundscape Mediation for People With Sound Sensitivity", author: "Jeremy Huang", affiliation: "University of Michigan" },
+  { title: "Demonstration of ProgramAT: Agentic Coding for Bespoke Visual Assistance", author: "Ellie Seehorn", affiliation: "University of Michigan" },
+  { title: "Co-Designing Multimodal Systems for Accessible Asynchronous Dance Instruction", author: "Ujjaini Das", affiliation: "The University of Texas at Austin" },
+  { title: "Spatial Audio for Dynamic Obstacle Avoidance and Real-Time Sensing in Simulated Blind Skiing", author: "Yuta Taguchi", affiliation: "Waseda University" },
+  { title: "Demonstration of VisiAgent: A Mixed Reality Agent with Visual Reference and Guidance for People with Low Vision", author: "Ruijia Chen", affiliation: "University of Wisconsin-Madison" },
+  { title: "A Mysterious Onsite Demonstration", author: "Yuanyang (YY) Teng", affiliation: "Northwestern University" },
 ];
 
 const organizers = [
@@ -729,7 +769,27 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="band band-paper" id="attendees" aria-labelledby="attendees-title">
+        <section className="band band-paper" id="demos" aria-labelledby="demos-title">
+          <div className="shell">
+            <div className="band-head">
+              <h2 id="demos-title">Accepted Demos/Posters</h2>
+            </div>
+
+            <ul className="demo-grid">
+              {demos.map((demo) => (
+                <li className="demo-card" key={demo.title}>
+                  <span className="demo-title">{demo.title}</span>
+                  <span className="demo-author">
+                    {demo.author}
+                    <span className="demo-affiliation"> · {demo.affiliation}</span>
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section className="band band-white" id="attendees" aria-labelledby="attendees-title">
           <div className="shell">
             <div className="band-head">
               <h2 id="attendees-title">Attendees</h2>
@@ -763,12 +823,12 @@ export default function Home() {
               ))}
             </div>
 
-            <p className="attendee-note">13 more attendees (chose not to disclose their information)</p>
+            <p className="attendee-note">7 more attendees (chose not to disclose their information)</p>
           </div>
         </section>
 
 
-        <section className="band band-white" id="organizers" aria-labelledby="organizers-title">
+        <section className="band band-paper" id="organizers" aria-labelledby="organizers-title">
           <div className="shell">
             <div className="band-head">
               <h2 id="organizers-title">
