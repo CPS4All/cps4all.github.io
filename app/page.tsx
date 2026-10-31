@@ -107,7 +107,13 @@ const panelists = [
   },
 ];
 
-const schedule: { time: string; title: string; body?: string; isBreak?: boolean }[] = [
+const schedule: {
+  time: string;
+  title: string;
+  body?: string;
+  isBreak?: boolean;
+  talk?: { title: string; abstract: string[] };
+}[] = [
   {
     time: "9:00 - 9:30",
     title: "Opening & Icebreaker",
@@ -115,13 +121,20 @@ const schedule: { time: string; title: string; body?: string; isBreak?: boolean 
   },
   {
     time: "9:30 - 10:15",
-    title: "Keynote - Jeffrey P. Bigham",
+    title: "Keynote - Prof. Jeffrey P. Bigham",
     // body: "Senior researchers will highlight recent advances in cyber-physical systems (CPS) and human augmentation.",
   },
   {
     time: "10:15 - 11:00",
-    title: "Keynote - Yuhang Zhao",
+    title: "Keynote - Prof. Yuhang Zhao",
     // body: "Industry perspectives on the challenges and opportunities of designing and deploying CPS in real-world settings.",
+    talk: {
+      title: "Embodied Assistive AI through Mixed Reality: From Adaptive Augmentation to Collaborative AI Agents",
+      abstract: [
+        "AI is leaving the chat window and entering the physical world. Through wearable cameras and mixed-reality glasses, it now sees what people see, reasons about their surroundings, and acts on their behalf. Whether this shift empowers or excludes people is a central question for human-computer interaction, and the problem is particularly sharp for people with disabilities (PwD). PwD have abilities and needs that defeat one-size-fits-all interaction paradigms, produce behaviors and data that AI has rarely seen, and face heightened risks to safety, agency, privacy, and trust when AI mediates their perception or acts for them. These challenges make disability the most demanding and revealing context for building human-centered AI that is useful, safe, trustworthy, and value-aligned.",
+        "Using low vision as a case, I will present my research on embodied, assistive AI through mixed reality that supports activities of daily living by building on users’ visual abilities and preferences rather than substituting for them. I first describe adaptive AR systems that perceive users’ context and behavior and augment only what matters: scene-aware systems that highlight the affordances of kitchen tools for safe interaction and distinguish objects by importance in cluttered scenes for at-a-glance perception, and a gaze-aware system that infers visual intent from eye movements to support line switching and difficult-word recognition in reading. I then turn from AI as proactive assistance to human-AI collaboration, introducing mixed-initiative agents in which the user and the AI each contribute what they perceive best. VisiAgent, our mixed-reality agent for low vision, lets users ground requests in their own gaze and pointing and critique the AI’s augmentations, retaining agency over what to augment and how, while the agent steps in proactively when safety demands. I will close with the open questions this work raises for collaborative assistive AI: who should take initiative and when, how to disambiguate references for users whose referencing abilities differ, how to allocate feedback across senses, and how to reduce the risks users face when relying on an AI assistant that can make errors.",
+      ],
+    },
   },
   {
     time: "11:00 - 12:00",
@@ -140,7 +153,7 @@ const schedule: { time: string; title: string; body?: string; isBreak?: boolean 
   },
   {
     time: "14:45 - 15:30",
-    title: "Keynote - Dhruv Jain",
+    title: "Keynote - Prof. Dhruv Jain",
     // body: "Community representatives will share lived experiences and perspectives on accessibility and ability augmentation technologies.",
   },
   {
@@ -701,6 +714,17 @@ export default function Home() {
                   <div className="rail-body">
                     <h3>{item.title}</h3>
                     {item.body ? <p>{item.body}</p> : null}
+                    {item.talk ? (
+                      <details className="rail-talk">
+                        <summary className="rail-talk-summary">
+                          <span className="rail-talk-title">{item.talk.title}</span>
+                          <span className="rail-talk-toggle" aria-hidden="true" />
+                        </summary>
+                        {item.talk.abstract.map((paragraph) => (
+                          <p key={paragraph}>{paragraph}</p>
+                        ))}
+                      </details>
+                    ) : null}
                   </div>
                 </article>
               ))}

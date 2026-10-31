@@ -877,6 +877,54 @@ img {
   font-size: 0.96rem;
 }
 
+.rail-talk {
+  margin-top: 0.35rem;
+}
+
+.rail-talk-summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.rail-talk-summary::-webkit-details-marker {
+  display: none;
+}
+
+.rail-talk-title {
+  min-width: 0;
+  color: var(--brand-deep);
+  font-size: 0.96rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.rail-talk-toggle {
+  flex: none;
+  color: var(--brand-deep);
+  font-size: 0.8rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.rail-talk-toggle::before {
+  content: "Abstract";
+}
+
+.rail-talk[open] .rail-talk-toggle::before {
+  content: "Less";
+}
+
+.rail-talk p {
+  margin-top: 0.7rem;
+  line-height: 1.7;
+}
+
 .rail-break .rail-body {
   background: transparent;
   border-style: dashed;
