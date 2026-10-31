@@ -155,6 +155,12 @@ const schedule: {
     time: "14:45 - 15:30",
     title: "Keynote - Prof. Dhruv Jain",
     // body: "Community representatives will share lived experiences and perspectives on accessibility and ability augmentation technologies.",
+    talk: {
+      title: "Knowing When to Stay Quiet: Lessons from Augmenting Hearing",
+      abstract: [
+        "Most talks about augmenting human abilities focus on what systems can add: more information, more alerts, more intelligence. This talk is about the opposite. Over the past decade, my lab has built systems that augment hearing, mostly with deaf and hard of hearing people: IoT displays that show sounds across a home, smartwatches that recognize them, mixed-reality headsets that describe a scene, and hearables that reshape the sounds a person hears. Looking across them, the most useful lesson is a counterintuitive one: they got better when they did less. They helped most when they stayed silent about sounds the person already knew, described what they heard without guessing what it meant, turned sounds down rather than cancelling them, and left the final judgment to the person whenever the person knew more than the microphone did. This restraint matters most when people, like many of those we work with, cannot double-check what a system tells them about a sense they don’t have full access to. I’ll share the systems and real-world deployments that taught us these lessons, and close with open questions for building cyber-physical systems that augment ability without taking it over.",
+      ],
+    },
   },
   {
     time: "15:30 - 16:15",
