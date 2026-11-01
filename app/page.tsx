@@ -390,7 +390,7 @@ const demos = [
   { title: "Co-Designing Multimodal Systems for Accessible Asynchronous Dance Instruction", author: "Ujjaini Das", affiliation: "The University of Texas at Austin" },
   { title: "Spatial Audio for Dynamic Obstacle Avoidance and Real-Time Sensing in Simulated Blind Skiing", author: "Yuta Taguchi", affiliation: "Waseda University" },
   { title: "Demonstration of VisiAgent: A Mixed Reality Agent with Visual Reference and Guidance for People with Low Vision", author: "Ruijia Chen", affiliation: "University of Wisconsin-Madison" },
-  { title: "A Mysterious Onsite Demonstration", author: "Yuanyang (YY) Teng", affiliation: "Northwestern University" },
+  { title: "Developmental Flourishing for the Body and the Mind", author: "Yuanyang (YY) Teng", affiliation: "Northwestern University" },
 ];
 
 const organizers = [
