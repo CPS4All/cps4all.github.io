@@ -123,6 +123,12 @@ const schedule: {
     time: "9:30 - 10:15",
     title: "Keynote - Prof. Jeffrey P. Bigham",
     // body: "Senior researchers will highlight recent advances in cyber-physical systems (CPS) and human augmentation.",
+    talk: {
+      title: "Accessibility in the AI Realization Era",
+      abstract: [
+        "We are nearing what I call the AI Realization Era — a time when many of the long-standing problems in AI are solved. I believe this will profoundly change how we interact with computers, and may finally allow us to solve long-standing problems in accessibility. At the same time, this will not come for free. In this talk, I’ll revisit three lines of work from my twenty years of working in accessibility, discuss how they have changed with the coming AI Realization Era, and what new problems we need to solve to ensure that people with disabilities fully benefit.",
+      ],
+    },
   },
   {
     time: "10:15 - 11:00",
