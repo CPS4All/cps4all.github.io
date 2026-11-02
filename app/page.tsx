@@ -71,11 +71,11 @@ const keynoteSpeakers = [
 
 const panelists = [
   {
-    name: "Jaylin Herskovitz",
-    title: "Assistant Professor, Tufts University",
-    url: "https://jayl.in",
-    image: "/panelists/jaylin.webp",
-    focus: "AI-based assistive technologies, DIY technology, and AR/VR",
+    name: "Franklin Mingzhe Li",
+    title: "Assistant Professor, UNC-Chapel Hill",
+    url: "https://franklin-li.com/",
+    image: "/organizers/franklin.webp",
+    focus: "Assistive technology, ubiquitous computing, and HCI",
   },
   {
     name: "Yaxin Hu",
@@ -303,12 +303,6 @@ const attendees = [
     intro: "I challenge outcome-driven \"access\" and develop a process-oriented frame: Developmental Flourishing. It reframes assistive technologies not as instruments for reaching task outcomes, but as a means through which blind and low-vision individuals can explore, create, and construct meaning from their experiences. I share an analysis of sensing and AI systems, discussing the extent to which they align with and augment blind people’s perceptual and cognitive processes, while highlighting persistent challenges and future directions.",
   },
   {
-    name: "Ujjaini Das",
-    institution: "The University of Texas at Austin",
-    url: "https://ujjainidas.github.io/",
-    intro: "I am broadly interested in making physical experiences accessible. My past work has focused on making dance instruction accessible for blind and low-vision learners using multimodal cues. I have also collaborated on Vid2Coach, a wearable task assistant for BLV individuals, and on designing accessible communication for household robots. This workshop is strongly aligned with my interest in physical systems for accessibility, and I am excited to connect with other researchers about these systems, both within and outside accessibility contexts.",
-  },
-  {
     name: "Peya Mowar",
     institution: "Carnegie Mellon University",
     url: "https://peyajm29.github.io/",
@@ -386,6 +380,24 @@ const attendees = [
     url: "https://akaul02.github.io/",
     intro: "My research interests include accessibility-driven design and how we can build interactive systems to support people in their daily lives across a variety of tasks. I'm interested in making complex technologies and information more accessible and exploring how adaptive interfaces can accommodate diverse abilities and preferences, including through multimodal interaction and interdisciplinary approaches, to foster greater independence and agency.",
   },
+  {
+    name: "Nahyun Lee",
+    institution: "Sungkyunkwan University",
+    url: "https://nahyunlee.com/",
+    intro: "My research interests lie at the intersection of HCI, human perception, and cognitive science. My previous work has involved XR, haptic interfaces, and behavioral experiments, exploring how interactive technologies influence human perception and decision-making. Through these experiences, I became increasingly interested in understanding why people perceive and interpret the same information differently, particularly under uncertainty. Recently, I have been exploring computational approaches to cognition, especially how behavioral experiments and probabilistic models can help explain human perception, judgment, and confidence. Ultimately, I hope to connect these insights with interactive technologies to develop systems that augment human perceptual and cognitive capabilities.",
+  },
+  {
+    name: "Ru Wang",
+    institution: "University of Wisconsin-Madison",
+    url: "https://ru-wang.com/",
+    intro: "I’m broadly interested in human–AI interaction and accessibility. My research explores how personal AI can understand and expand people’s capabilities and help them develop new ones.",
+  },
+  {
+    name: "Di Tian",
+    institution: "ShanghaiTech University",
+    url: "https://ditian.org/",
+    intro: "My research explores how sensing and embodied interaction can expand the ways people use everyday systems. In my UIST 2026 paper, I developed a software approach that uses microphone arrays to detect coarse airflow direction, motivated in part by hands-busy situations. I also work on movement-based interaction in XR. These projects connect with the workshop’s focus on context sensing and ability augmentation. I hope to learn from accessibility researchers and discuss how to design and evaluate such systems with diverse users before drawing conclusions about their real-world benefits.",
+  },
 ];
 
 const demos = [
@@ -393,7 +405,6 @@ const demos = [
   { title: "Beyond Removal: Diminished Reality for Attention Support", author: "Alex Noh", affiliation: "Simon Fraser University" },
   { title: "Demo of Sona: Personalizable Real-Time Soundscape Mediation for People With Sound Sensitivity", author: "Jeremy Huang", affiliation: "University of Michigan" },
   { title: "Demonstration of ProgramAT: Agentic Coding for Bespoke Visual Assistance", author: "Ellie Seehorn", affiliation: "University of Michigan" },
-  { title: "Co-Designing Multimodal Systems for Accessible Asynchronous Dance Instruction", author: "Ujjaini Das", affiliation: "The University of Texas at Austin" },
   { title: "Spatial Audio for Dynamic Obstacle Avoidance and Real-Time Sensing in Simulated Blind Skiing", author: "Yuta Taguchi", affiliation: "Waseda University" },
   { title: "Demonstration of VisiAgent: A Mixed Reality Agent with Visual Reference and Guidance for People with Low Vision", author: "Ruijia Chen", affiliation: "University of Wisconsin-Madison" },
   { title: "Developmental Flourishing for the Body and the Mind", author: "Yuanyang (YY) Teng", affiliation: "Northwestern University" },
